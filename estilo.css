@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    width: 100%;
+    
+}
+.navegacion{
+    background-color: rgb(43, 42, 42);
+    padding: 1.5% 1% 1.5% 1%;
+    color: white;
+    justify-content: center;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.navegacion-menu{
+    display: flex;
+    margin: auto;
+    width: 15%;
+    font-size: 0.7em;
+    background-color: green;
+
+}
+
