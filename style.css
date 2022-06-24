@@ -8,7 +8,7 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
+    color: rgb(78, 77, 77);
 }
 
 /* /////////////////////////////////////////////////////////////// */
@@ -20,12 +20,6 @@ header{
     position: absolute;
     width: 100%;
     height: 90px;
-}
-
-.navegacion{
-    color: rgb(78, 77, 77);
-    /* justify-content: center; */
-    
 }
 
 .titulo{
@@ -88,7 +82,6 @@ section{
     background-color: white;
     width: 450px;
     height: 90px;
-
 }
 
 .section-barra-central{
@@ -123,6 +116,41 @@ section{
     font-size: 1em;
 }
 
+
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - GENERAL
+/* /////////////////////////////////////////////////////////////// */
+
+.titulo1-aside{
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.titulo2-margen{
+    margin-top: 3%;
+}
+
+.titulo2-aside{
+    font-size: 0.65em;
+    font-weight: 700;    
+}
+
+.contenedor-aside{
+    width: 90%;
+    padding-top: 10%;
+}
+
+.input-estilo-general{
+    width: 100%;
+    background-color: rgb(209, 168, 211);
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - IMAGEN */
 /* /////////////////////////////////////////////////////////////// */
@@ -132,9 +160,19 @@ section{
     position: absolute;
     width: 15%;
     height: 625px;
-    right: 0;
+    /* right: 0; */
+    display: flex;
+    justify-content: center;
 }
 
+.titulo3-aside{
+    font-size: 0.65em;
+}
+
+.input-estilo-deslizante{
+    width: 100%;
+    color: rgb(78, 77, 77);
+}
 
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - TEXTO */
@@ -145,7 +183,43 @@ section{
     position: absolute;
     width: 15%;
     height: 625px;
-    right: 300px;
     right: 0;
+    display: flex;
+    justify-content: center;
+}
 
+.input-check{
+    width: 6%; 
+    height: 11px;
+}
+
+.texto-check{
+    font-size: 0.6em;
+}
+
+.tamaño-fuente{
+    width: 50%;
+}
+
+.justificado-fuente{
+    width: 14%;
+}
+
+.contenedor-color-fondo{
+    display: flex;
+}
+
+.input-color-fondo{
+    width: 95%;
+    margin-left: 3%;
+}
+
+.input-contorno-ninguno{
+    width: 35%;
+    padding-left: 3%;
+}
+
+.input-contorno-claro-oscuro{
+    width: 30%;
+    padding-left: 3%;
 }

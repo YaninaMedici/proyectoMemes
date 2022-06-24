@@ -14,7 +14,7 @@
     HEADER
     ////////////////////////////////////////////////////////////// -->
     <header>
-        <nav class="navegacion">
+        <nav>
             <h1 class="titulo">Generador de Memes</h1>
             <div class="navegacion-menu">
                 <button class="navegacion-btn">
@@ -58,53 +58,58 @@
     ////////////////////////////////////////////////////////////// -->
     
     <aside class="aside-imagen">
-        <div>
-            <h3>IMAGEN</h3>
-            <div>
-                <label>URL</label>
-                <input type="text">
+        <div class="contenedor-aside">
+            <h3 class="titulo1-aside">IMAGEN</h3>
+            <div class="titulo2-margen">
+                <label class="titulo2-aside">URL</label>
+                <input class="input-estilo-general" type="text">
             </div>
-            <div>
-                <div>COLOR</div>
-                <div>NINGUNO</div>
+            <div class="titulo2-margen">
+                <span class="titulo2-aside">FONDO</span>
+                <div>
+                    <input class="input-estilo-general" type="text">
+                </div>
+                <div>
+                    <input class="input-estilo-general" type="text">
+                </div>
             </div>
-            <div>
-                <span>FILTROS</span>
+            <div class="titulo2-margen">
+                <span class="titulo2-aside">FILTROS</span>
                 <div>
-                    <label>BRILLO</label>
-                    <input type="text">
+                    <label class="titulo3-aside">BRILLO</label>
+                    <input class="input-estilo-deslizante" name="brillo" type="range" min="0" max="1" step="0.1" value="1" aria-label="brillo">
                 </div>
                 <div>
-                    <label>OPACIDAD</label>
-                    <input type="text">
+                    <label class="titulo3-aside">OPACIDAD</label>
+                    <input class="input-estilo-deslizante" name="opacidad" type="range" min="0" max="1" step="0.1" value="1" aria-label="opacidad">
                 </div>
                 <div>
-                    <label>CONTRASTE</label>
-                    <input type="text">
+                    <label class="titulo3-aside">CONTRASTE</label>
+                    <input class="input-estilo-deslizante" name="contraste" type="range" min="0" max="1" step="0.1" value="1" aria-label="contraste">
                 </div>
                 <div>
-                    <label>DESENFOQUE</label>
-                    <input type="text">
+                    <label class="titulo3-aside">DESENFOQUE</label>
+                    <input class="input-estilo-deslizante" name="desenfoque" type="range" min="0" max="10" step="0.1" value="0" aria-label="desenfoque">
                 </div>
                 <div>
-                    <label>ESCALA DE GRISES</label>
-                    <input type="text">
+                    <label class="titulo3-aside">ESCALA DE GRISES</label>
+                    <input class="input-estilo-deslizante" name="escalaDeGrises" type="range" min="0" max="100" step="1" value="0" aria-label="escala de grises">
                 </div>
                 <div>
-                    <label>SEPIA</label>
-                    <input type="text">
+                    <label class="titulo3-aside">SEPIA</label>
+                    <input class="input-estilo-deslizante" name="sepia" type="range" min="0" max="100" step="1" value="0" aria-label="sepia">
                 </div>
                 <div>
-                    <label>HUE</label>
-                    <input type="text">
+                    <label class="titulo3-aside">HUE</label>
+                    <input class="input-estilo-deslizante" name="hue" type="range" min="0" max="359" step="1" value="0" aria-label="hue rotar matiz">
                 </div>
                 <div>
-                    <label>SATURADO</label>
-                    <input type="text">
+                    <label class="titulo3-aside">SATURADO</label>
+                    <input class="input-estilo-deslizante" name="saturado" type="range" min="100" max="1000" step="10" value="100" aria-label="saturado">
                 </div>
                 <div>
-                    <label>NEGATIVO</label>
-                    <input type="text">
+                    <label class="titulo3-aside">NEGATIVO</label>
+                    <input class="input-estilo-deslizante" name="negativo" type="range" min="0" max="1" step="0.1" value="0" aria-label="negativo">
                 </div>
                 
                 <button>Restablecer filtros</button>
@@ -117,52 +122,77 @@
     ////////////////////////////////////////////////////////////// -->
     
     <aside class="aside-texto">
-        <div>
-            <h3>TEXTO</h3>
+        <div class="contenedor-aside">
+            <h3 class="titulo1-aside">TEXTO</h3>
             <div>
-                <label>SUPERIOR</label>
-                <input type="text">
-                <span>Sin texto superior</span>
-            </div>
-            <div>
-                <label>INFERIOR</label>
-                <input type="text">
-                <span>Sin texto inferior</span>
-            </div>
-            <div>
-                <label>FUENTE</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div>
+                <div class="titulo2-margen">
+                    <label class="titulo2-aside">SUPERIOR</label>
+                    <input class="input-estilo-general" type="text">
+                </div>              
                 <div>
-                    <label>COLOR</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>FONDO</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <span>Fondo transparente</span>
+                    <input class="input-check" type="text">
+                    <label class="texto-check">Sin texto superior</label>
                 </div>
             </div>
             <div>
-                <label>CONTORNO</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
+                <div class="titulo2-margen">
+                    <label class="titulo2-aside">INFERIOR</label>
+                    <input class="input-estilo-general" type="text">
+                </div>
+                <div>
+                    <input class="input-check" type="text">
+                    <span class="texto-check">Sin texto inferior</span>
+                </div>
+            </div>
+            <div class="titulo2-margen">
+                <label class="titulo2-aside">FUENTE</label>
+                <select name="Tipo de fuente" id="tipoDeFuente" class="input-estilo-general" aria-label="Tipo de fuente">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvetica" selected>Helvetica</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>                
+                <input class="input-estilo-general tamaño-fuente" type="number" name="Tamaño de fuente" id="tamanoInput" min="12" value="40" aria-label="Tamaño de fuente"/>
+                <input class="input-estilo-general justificado-fuente" type="text">
+                <input class="input-estilo-general justificado-fuente" type="text">
+                <input class="input-estilo-general justificado-fuente" type="text">
             </div>
             <div>
-                <label>ESPACIADO</label>
-                <input type="text">
+                <div class="contenedor-color-fondo">
+                    <div class="titulo2-margen">
+                        <label class="titulo2-aside">COLOR</label>
+                        <input class="input-estilo-general input-color-fondo" type="text">
+                    </div>
+                    <div class="titulo2-margen">
+                        <label class="titulo2-aside">FONDO</label>
+                        <input class="input-estilo-general input-color-fondo" type="text">
+                    </div>
+                </div>
+                <div>
+                    <input class="input-check" type="text">
+                    <span class="texto-check">Fondo transparente</span>
+                </div>
             </div>
-            <div>
-                <label>INTERLINEADO</label>
-                <input type="text">
+            <div class="titulo2-margen">
+                <label class="titulo2-aside">CONTORNO</label>
+                <div>
+                    <input class="input-estilo-general input-contorno-ninguno" placeholder="Ninguno" type="text">
+                    <input class="input-estilo-general input-contorno-claro-oscuro" placeholder="Claro" type="text">
+                    <input class="input-estilo-general input-contorno-claro-oscuro" placeholder="Oscuro" type="text">
+                </div>
+            </div>
+            <div class="titulo2-margen">
+                <label class="titulo2-aside">ESPACIADO</label>
+                <input class="input-estilo-general" type="text">
+            </div>
+            <div class="titulo2-margen">
+                <label class="titulo2-aside">INTERLINEADO</label>
+                <input class="input-estilo-general" type="text">
             </div>
         </div>
     </aside>
