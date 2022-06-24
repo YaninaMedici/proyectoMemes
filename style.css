@@ -11,10 +11,6 @@ body{
     position: relative;
 }
 
-
-
-
-
 /* /////////////////////////////////////////////////////////////// */
 /* HEADER */
 /* /////////////////////////////////////////////////////////////// */
@@ -27,23 +23,33 @@ header{
 }
 
 .navegacion{
-    padding-top: 1%;
     color: rgb(78, 77, 77);
-    justify-content: center;
+    /* justify-content: center; */
+    
 }
 
 .titulo{
     font-size: 1.7em;
     text-align: center;
-    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
 }
 
 .navegacion-menu{
     display: flex;
     margin: auto;
-    width: 15%;
+    width: 18%;
     justify-content: space-around;
+}
 
+.navegacion-btn{
+    background-color: transparent;
+    width: 32%;
+    height: 25px;
+    color: rgb(78, 77, 77);
+    font-size: 0.72em;
+    border: none;
+    border-radius: 5px;
 }
 
 .navegacion-icono{
@@ -51,13 +57,13 @@ header{
     font-size: 1em;
 }
 
-.navegacion-btn{
-    background-color: transparent;
-    color: rgb(78, 77, 77);
-    font-size: 0.7em;
-    border: none;
+.navegacion-btn:hover{
+    background-color: rgb(203, 202, 202);
 }
 
+.navegacion-btn:focus{
+    background-color: rgb(203, 202, 202);;
+}
 
 /* /////////////////////////////////////////////////////////////// */
 /* SECTION */
@@ -73,45 +79,49 @@ section{
 
 .section-contenedor{
     display: flex;
-    justify-content: center;
-    position: relative;
-
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.7%;
 }
 
 .section-barra-superior{
-    position: absolute;
     background-color: white;
-    width: 500px;
+    width: 450px;
     height: 90px;
-    top: 10px;
 
 }
 
 .section-barra-central{
-    position: absolute;
     background-color: black;
-    width: 500px;
-    height: 300px;
-    top: 100px;
+    width: 450px;
+    height: 280px;
 }
 
 .section-barra-inferior{
-    position: absolute;
     background-color: white;
-    width: 500px;
+    width: 450px;
     height: 90px;
-    top: 400px;
+}
+
+.section-contenedor-btn{
+    display: flex;
+    justify-content: center;
 }
 
 .btn-section{
     background-color: green;
+    border: none;
     color: white;
+    font-size: 0.7em;
+    width: 9%;
+    height: 35px;
+    margin-top: 1%;
 }
 
 .section-icono{
     color: white;
+    font-size: 1em;
 }
-
 
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - IMAGEN */
@@ -123,7 +133,6 @@ section{
     width: 15%;
     height: 625px;
     right: 0;
-
 }
 
 
