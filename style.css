@@ -16,7 +16,7 @@ body{
 /* /////////////////////////////////////////////////////////////// */
 
 header{
-    background-color: rgb(209, 168, 211);
+    background-color: rgb(210, 194, 211);
     position: absolute;
     width: 100%;
     height: 90px;
@@ -52,11 +52,11 @@ header{
 }
 
 .navegacion-btn:hover{
-    background-color: rgb(203, 202, 202);
+    background-color: rgb(237, 222, 238);
 }
 
 .navegacion-btn:focus{
-    background-color: rgb(203, 202, 202);;
+    background-color: rgb(237, 222, 238);
 }
 
 /* /////////////////////////////////////////////////////////////// */
@@ -64,7 +64,7 @@ header{
 /* /////////////////////////////////////////////////////////////// */
 
 section{
-    background-color: rgb(217, 201, 218);
+    background-color: rgb(215, 206, 216);
     position: absolute;
     width: 100%;
     height: 535px;
@@ -111,6 +111,10 @@ section{
     margin-top: 1%;
 }
 
+.btn-section:hover{
+    background-color: rgb(31, 97, 31);
+}
+
 .section-icono{
     color: white;
     font-size: 1em;
@@ -143,12 +147,20 @@ section{
 
 .input-estilo-general{
     width: 100%;
-    background-color: rgb(209, 168, 211);
+    background-color: rgb(210, 194, 211);
     height: 25px;
     border: none;
     border-radius: 3px;
     margin-top: 1%;
     margin-bottom: 1%;
+}
+
+.input-hover:hover{
+    background-color: rgb(185, 158, 187);
+}
+
+.input-hover:focus{
+    background-color: rgb(185, 158, 187);
 }
 
 /* /////////////////////////////////////////////////////////////// */
@@ -165,6 +177,15 @@ section{
     justify-content: center;
 }
 
+.contenedor-texto-fondo{
+    display: flex
+}
+
+.input-texto-fondo{
+    width: 95%;
+    margin-left: 3%;
+}
+
 .titulo3-aside{
     font-size: 0.65em;
 }
@@ -172,6 +193,16 @@ section{
 .input-estilo-deslizante{
     width: 100%;
     color: rgb(78, 77, 77);
+}
+
+.btn-filtros{
+    width: 55%;
+    height: 25px;
+    font-size: 0.71em;
+    background-color: rgb(210, 194, 211);
+    border: none;
+    border-radius: 3px;
+    margin-top: 5%;
 }
 
 /* /////////////////////////////////////////////////////////////// */
