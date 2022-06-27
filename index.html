@@ -34,24 +34,24 @@
     </header>
 
     <!-- //////////////////////////////////////////////////////////////
-    SECTION
+    MAIN
     ////////////////////////////////////////////////////////////// -->
     
-    <section>
-        <div class="section-contenedor">
-            <div class="section-barra-superior">Top text</div>
-            <div class="section-barra-central">
+    <main class="contenedor-meme">
+        <div class="meme">
+            <p id="meme-texto-superior" class="meme-texto">TOP TEXT</p> 
+            <div id="meme-imagen" class="meme-imagen">
                 <img src="" alt="">
             </div>
-            <div class="section-barra-inferior">Bottom text</div>
+            <p id="meme-texto-inferior" class="meme-texto">BOTTOM TEXT</p> 
         </div>
-        <div class="section-contenedor-btn">
-            <button class="btn-section">
-                <i class="fa-solid fa-download section-icono"></i>
+        <div class="main-contenedor-btn">
+            <button class="btn-main">
+                <i class="fa-solid fa-download main-icono"></i>
                 Descargar meme
             </button>
         </div>
-    </section>
+    </main>
 
     <!-- //////////////////////////////////////////////////////////////
     ASIDE - IMAGEN
@@ -129,21 +129,21 @@
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">SUPERIOR</label>
-                    <input class="input-estilo-general input-hover" type="text">
+                    <input id="input-texto-superior" class="input-estilo-general input-hover" type="text">
                 </div>              
                 <div>
-                    <input class="input-check" type="text">
-                    <label class="texto-check">Sin texto superior</label>
+                    <input id="input-ckeckbox-texto-superior" class="input-check" type="checkbox">
+                    <label for="input-ckeckbox-texto-superior" class="texto-check">Sin texto superior</label>
                 </div>
             </div>
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">INFERIOR</label>
-                    <input class="input-estilo-general input-hover" type="text">
+                    <input id="input-texto-inferior" class="input-estilo-general input-hover" type="text">
                 </div>
                 <div>
-                    <input class="input-check" type="text">
-                    <span class="texto-check">Sin texto inferior</span>
+                    <input id="input-ckeckbox-texto-inferior" class="input-check" type="checkbox">
+                    <label for="input-ckeckbox-texto-inferior" class="texto-check">Sin texto inferior</label>
                 </div>
             </div>
             <div class="titulo2-margen">
@@ -154,8 +154,8 @@
                     <option value="American Typewriter">American Typewriter</option>
                     <option value="Andale Mono">Andale Mono</option>
                     <option value="Comic Sans MS">Comic Sans MS</option>
-                    <option value="Helvetica" selected>Helvetica</option>
-                    <option value="Impact">Impact</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact" selected>Impact</option>
                     <option value="Verdana">Verdana</option>
                     <option value="Times New Roman">Times New Roman</option>
                 </select>                
