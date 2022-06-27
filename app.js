@@ -1,6 +1,6 @@
-const textoSuperior = document.getElementById('texto-superior');
+const memeTextoSuperior = document.getElementById('meme-texto-superior');
 const inputTextoSuperior = document.getElementById('input-texto-superior');
-const textoInferior = document.getElementById('texto-inferior');
+const memeTextoInferior = document.getElementById('meme-texto-inferior');
 const inputTextoInferior = document.getElementById('input-texto-inferior');
 const inputCkeckboxTextoSuperior = document.getElementById('input-ckeckbox-texto-superior');
 
@@ -12,12 +12,12 @@ const inputCkeckboxTextoSuperior = document.getElementById('input-ckeckbox-texto
 
 inputTextoSuperior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
-    textoSuperior.innerHTML = textoIngresado;
+    memeTextoSuperior.innerHTML = textoIngresado;
 })
 
 inputTextoInferior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
-    textoInferior.innerHTML = textoIngresado;
+    memeTextoInferior.innerHTML = textoIngresado;
 })
 
 // inputCkeckboxTextoSuperior.addEventListener('click', (event) => {
