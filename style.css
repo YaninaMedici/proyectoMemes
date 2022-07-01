@@ -8,8 +8,16 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(78, 77, 77);
+    color: rgb(253, 252, 252);
+    transition: .3s ease all;
+    background-color: blueviolet;
+    
 }
+.dark{
+    background-color: rgb(41, 40, 40);
+   
+}
+
 
 /* /////////////////////////////////////////////////////////////// */
 /* HEADER */
@@ -58,6 +66,48 @@ header{
 .navegacion-btn:focus{
     background-color: rgb(237, 222, 238);
 }
+
+.navegacion-btn-switch{
+    display: flex;
+    background-color: rgb(72, 70, 70);
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    
+}
+.navegacion-btn-switch span{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: white;
+}
+.navegacion-btn-switch::after{
+    content: "";
+    display: block;
+    width:30px;
+    height: 30px;
+    position: absolute;
+    background: white;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);
+  
+}
+.navegacion-btn-switch.active{
+    background-color: orange;
+    color: black;
+    }
+    .navegacion-btn-switch.active::after{
+        left: unset;
+         right:0 ;
+        }
 
 /* /////////////////////////////////////////////////////////////// */
 /* SECTION */
@@ -247,7 +297,7 @@ section{
 
 .input-contorno-ninguno{
     width: 35%;
-    padding-left: 3%;
+   padding-left: 3%;
 }
 
 .input-contorno-claro-oscuro{
