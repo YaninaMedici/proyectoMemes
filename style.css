@@ -93,12 +93,12 @@ Meme
 }
 
 .meme{
-    width: 450px;
-    height: 468px;
-    background-color: black;
+    position: absolute;
+    top: 10px;
 }
 
-.meme-texto{
+.meme-texto-superior{
+    position: relative;
     background-color: white;
     color: black;
     text-align: center;
@@ -108,10 +108,28 @@ Meme
     height: 90px;
     padding-top: 20px;
     padding-bottom: 20px;
+    top: 0px;
+}
+
+.meme-texto-inferior{
+    position: relative;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    height: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    bottom: 0px;
 }
 
 .meme-imagen{
-    height: 288px;
+    position: relative;
+    width: 450px;
+    height: 280px;
+    background-color: black;
 }
 
 /* ***************
@@ -122,6 +140,8 @@ Botón de descarga
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
+    top: 230px;
 }
 
 .btn-main{
