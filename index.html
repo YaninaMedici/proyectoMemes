@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Editor de memes YANI</title>
+    <title>Editor de FLOR memes</title>
 </head>
-<body>
+<body class="dark" id="dark">
 
     <!-- //////////////////////////////////////////////////////////////
     HEADER
     ////////////////////////////////////////////////////////////// -->
     <header>
-        <nav>
+        <nav id="nav">
             <h1 class="titulo">Generador de Memes</h1>
             <div class="navegacion-menu">
                 <button class="navegacion-btn">
@@ -25,9 +25,10 @@
                     <i class="fa-solid fa-font"></i>
                     Texto
                 </button>
-                <button class="navegacion-btn">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    Modo claro
+                <button class="navegacion-btn-switch active" id="switch">
+                  <span><i class="fa-solid fa-sun sol"></i></span> 
+                  <span><i class="fa-solid fa-moon luna"></i></span>               
+        
                 </button> 
             </div>
         </nav>
@@ -37,10 +38,10 @@
     MAIN
     ////////////////////////////////////////////////////////////// -->
     
-    <main class="contenedor-meme">
-        <div class="meme">
-            <p id="meme-texto-superior" class="meme-texto-superior">TOP TEXT</p> 
-            <div id="meme-imagen" class="meme-imagen">
+    <main class="contenedor-meme" id="section">
+        <div class="meme section-contenedor" id="section-principal">
+            <p id="meme-texto-superior" class="meme-texto-superior section-barra-superior">TOP TEXT</p> 
+            <div id="meme-imagen" class="meme-imagen section-barra-central">
                 <img src="" alt="">
             </div>
             <p id="meme-texto-inferior" class="meme-texto-inferior">BOTTOM TEXT</p> 
@@ -57,8 +58,8 @@
     ASIDE - IMAGEN
     ////////////////////////////////////////////////////////////// -->
     
-    <aside class="aside-imagen">
-        <div class="contenedor-aside">
+    <aside class="aside-imagen"> 
+        <div class="contenedor-aside" id="imagen-aside"> 
             <h3 class="titulo1-aside">IMAGEN</h3>
             <div class="titulo2-margen">
                 <label class="titulo2-aside">URL</label>
@@ -75,42 +76,42 @@
                     </div>
                 </div>       
             </div>
-            <div class="titulo2-margen">
+            <div class="container">
                 <span class="titulo2-aside">FILTROS</span>
                 <div>
-                    <label class="titulo3-aside">BRILLO</label>
-                    <input class="input-estilo-deslizante" name="brillo" type="range" min="0" max="1" step="0.1" value="1" aria-label="brillo">
+                    <label for="brightness-slider" class="titulo3-aside">BRILLO</label>
+                    <input class="input-estilo-deslizante" name="brillo" type="range" id= "Brillito" min="10" max="100" step="0.1" value="100" aria-label="brillo">
                 </div>
                 <div>
-                    <label class="titulo3-aside">OPACIDAD</label>
-                    <input class="input-estilo-deslizante" name="opacidad" type="range" min="0" max="1" step="0.1" value="1" aria-label="opacidad">
+                    <label for="opacity-slider" class="titulo3-aside">OPACIDAD</label>
+                    <input class="input-estilo-deslizante" name="opacidad" type="range" id="opaco" min="10" max="100" step="0.1" value="1" aria-label="opacidad">
                 </div>
                 <div>
-                    <label class="titulo3-aside">CONTRASTE</label>
-                    <input class="input-estilo-deslizante" name="contraste" type="range" min="0" max="1" step="0.1" value="1" aria-label="contraste">
+                    <label for="contrast-slider" class="titulo3-aside">CONTRASTE</label>
+                    <input class="input-estilo-deslizante" name="contraste" type="range" id="contrasteu" min="10" max="100" step="0.1" value="1" aria-label="contraste">
                 </div>
                 <div>
-                    <label class="titulo3-aside">DESENFOQUE</label>
-                    <input class="input-estilo-deslizante" name="desenfoque" type="range" min="0" max="10" step="0.1" value="0" aria-label="desenfoque">
+                    <label for="blur-slider" class="titulo3-aside">DESENFOQUE</label>
+                    <input class="input-estilo-deslizante" name="desenfoque" type="range" id="desenfocado" min="10" max="100" step="0.1" value="0" aria-label="desenfoque">
                 </div>
                 <div>
-                    <label class="titulo3-aside">ESCALA DE GRISES</label>
-                    <input class="input-estilo-deslizante" name="escalaDeGrises" type="range" min="0" max="100" step="1" value="0" aria-label="escala de grises">
+                    <label for="grayscale-slider"class="titulo3-aside">ESCALA DE GRISES</label>
+                    <input class="input-estilo-deslizante" name="escalaDeGrises" type="range" min="10" max="100" step="1" value="0" aria-label="escala de grises">
                 </div>
                 <div>
-                    <label class="titulo3-aside">SEPIA</label>
+                    <label for="sepia-slider" class="titulo3-aside">SEPIA</label>
                     <input class="input-estilo-deslizante" name="sepia" type="range" min="0" max="100" step="1" value="0" aria-label="sepia">
                 </div>
                 <div>
-                    <label class="titulo3-aside">HUE</label>
+                    <label for="hue-slider" class="titulo3-aside">HUE</label>
                     <input class="input-estilo-deslizante" name="hue" type="range" min="0" max="359" step="1" value="0" aria-label="hue rotar matiz">
                 </div>
                 <div>
-                    <label class="titulo3-aside">SATURADO</label>
+                    <label for="saturate-slider" class="titulo3-aside">SATURADO</label>
                     <input class="input-estilo-deslizante" name="saturado" type="range" min="100" max="1000" step="10" value="100" aria-label="saturado">
                 </div>
                 <div>
-                    <label class="titulo3-aside">NEGATIVO</label>
+                    <label for="invert-slider" class="titulo3-aside">NEGATIVO</label>
                     <input class="input-estilo-deslizante" name="negativo" type="range" min="0" max="1" step="0.1" value="0" aria-label="negativo">
                 </div>
                 
@@ -125,7 +126,7 @@
     ////// -->
     
     <aside class="aside-texto">
-        <div class="contenedor-aside">
+        <div class="contenedor-aside" id="texto-aside">
             <h3 class="titulo1-aside">TEXTO</h3>
             <div>
                 <div class="titulo2-margen">
@@ -210,6 +211,6 @@
 
 
 
-    <script src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
