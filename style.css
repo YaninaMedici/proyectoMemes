@@ -19,9 +19,17 @@ body{
 }
 
 
+.oculto{
+    display: none;
+}
+
 /* /////////////////////////////////////////////////////////////// */
 /* HEADER */
 /* /////////////////////////////////////////////////////////////// */
+
+/* ***************
+Header y título
+*************** */
 
 header{
     background-color: rgb(210, 194, 211);
@@ -36,6 +44,10 @@ header{
     margin-top: 0.5%;
     margin-bottom: 1%;
 }
+
+/* ***************
+Barra de navegación
+*************** */
 
 .navegacion-menu{
     display: flex;
@@ -110,48 +122,80 @@ header{
         }
 
 /* /////////////////////////////////////////////////////////////// */
-/* SECTION */
+/* MAIN */
 /* /////////////////////////////////////////////////////////////// */
 
-section{
+/* ***************
+Meme
+*************** */
+
+.contenedor-meme{
     background-color: rgb(215, 206, 216);
-    position: absolute;
     width: 100%;
     height: 535px;
-    top: 90px; 
-}
-
-.section-contenedor{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 0.7%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    top: 90px;
 }
 
-.section-barra-superior{
+.meme{
+    position: absolute;
+    top: 10px;
+}
+
+.meme-texto-superior{
+    position: relative;
     background-color: white;
-    width: 450px;
+    color: black;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
     height: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: 0px;
 }
 
-.section-barra-central{
-    background-color: black;
+.meme-texto-inferior{
+    position: relative;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    height: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    bottom: 0px;
+}
+
+.meme-imagen{
+    position: relative;
     width: 450px;
     height: 280px;
+    background-color: black;
 }
 
-.section-barra-inferior{
-    background-color: white;
-    width: 450px;
-    height: 90px;
-}
+/* ***************
+Botón de descarga
+*************** */
 
-.section-contenedor-btn{
+.main-contenedor-btn{
     display: flex;
     justify-content: center;
+    width: 100%;
+    position: relative;
+    top: 230px;
 }
 
-.btn-section{
+.btn-main{
     background-color: green;
     border: none;
     color: white;
@@ -161,15 +205,14 @@ section{
     margin-top: 1%;
 }
 
-.btn-section:hover{
+.btn-main:hover{
     background-color: rgb(31, 97, 31);
 }
 
-.section-icono{
+.main-icono{
     color: white;
     font-size: 1em;
 }
-
 
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - GENERAL
@@ -203,6 +246,7 @@ section{
     border-radius: 3px;
     margin-top: 1%;
     margin-bottom: 1%;
+    font-size: 0.65em;
 }
 
 .input-hover:hover{
@@ -225,6 +269,7 @@ section{
     /* right: 0; */
     display: flex;
     justify-content: center;
+    /* display: none; */
 }
 
 .contenedor-texto-fondo{
@@ -267,6 +312,7 @@ section{
     right: 0;
     display: flex;
     justify-content: center;
+    /* display: none; */
 }
 
 .input-check{
@@ -304,3 +350,5 @@ section{
     width: 30%;
     padding-left: 3%;
 }
+
+
