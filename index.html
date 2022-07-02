@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Editor de memes</title>
 </head>
-<body class="dark" id="dark">
+<body class="dark" id="darki">
 
     <!-- //////////////////////////////////////////////////////////////
     HEADER
@@ -39,10 +40,10 @@
     ////////////////////////////////////////////////////////////// -->
     
     <main class="contenedor-meme" id="section">
-        <div class="meme section-contenedor" id="section-principal">
+        <div id="section-pp" class="meme section-contenedor" ><!-- cambie el id de section-principal a section-pp 1/07/2022 FE-->
             <p id="meme-texto-superior" class="meme-texto-superior section-barra-superior">TOP TEXT</p> 
-            <div id="meme-imagen" class="meme-imagen section-barra-central">
-                <img src="" alt="">
+            <div id="meme-imagen" class="meme-imagen section-barra-central"> <!--agregue id="imagen-aqui"en la etiqueta IMG y un width para que no se vaya la imagen 01/07/2022 FE-->
+                <img src="" alt="" id ="imagen-aqui" width="450"> <!--agregue id="imagen-aqui"en la etiqueta IMG y un width para que no se vaya la imagen 01/07/2022 FE-->
             </div>
             <p id="meme-texto-inferior" class="meme-texto-inferior">BOTTOM TEXT</p> 
         </div>
@@ -63,7 +64,8 @@
             <h3 class="titulo1-aside">IMAGEN</h3>
             <div class="titulo2-margen">
                 <label class="titulo2-aside">URL</label>
-                <input class="input-estilo-general input-hover" type="text">
+                <input class="panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
+                
             </div>
             <div class="titulo2-margen">
                 <span class="titulo2-aside">FONDO</span>
@@ -77,42 +79,42 @@
                 </div>       
             </div>
             <div class="container">
-                <span class="titulo2-aside">FILTROS</span>
+                <span class="titulo2-aside">FILTROS</span><!-- 1) Agregue title con un valor en los todos inputs 2) Modifique todos los Names 02/07/2022-->///
                 <div>
                     <label for="brightness-slider" class="titulo3-aside">BRILLO</label>
-                    <input class="input-estilo-deslizante" name="brillo" type="range" id= "Brillito" min="10" max="100" step="0.1" value="100" aria-label="brillo">
+                    <input class="input-estilo-deslizante" name="brightness" title="%" type="range" id= "Brillito" min="10" max="100" step="0.1" value="100" aria-label="brillo">
                 </div>
                 <div>
                     <label for="opacity-slider" class="titulo3-aside">OPACIDAD</label>
-                    <input class="input-estilo-deslizante" name="opacidad" type="range" id="opaco" min="10" max="100" step="0.1" value="1" aria-label="opacidad">
+                    <input class="input-estilo-deslizante" name="opacity" title="%" type="range" id="opaco" min="10" max="100" step="0.1" value="1" aria-label="opacidad">
                 </div>
                 <div>
                     <label for="contrast-slider" class="titulo3-aside">CONTRASTE</label>
-                    <input class="input-estilo-deslizante" name="contraste" type="range" id="contrasteu" min="10" max="100" step="0.1" value="1" aria-label="contraste">
+                    <input class="input-estilo-deslizante" name="contrast" title="%" type="range" id="contrasteu" min="10" max="100" step="0.1" value="1" aria-label="contraste">
                 </div>
                 <div>
                     <label for="blur-slider" class="titulo3-aside">DESENFOQUE</label>
-                    <input class="input-estilo-deslizante" name="desenfoque" type="range" id="desenfocado" min="10" max="100" step="0.1" value="0" aria-label="desenfoque">
+                    <input class="input-estilo-deslizante" name="blur" title="px" type="range" id="desenfocado" min="10" max="100" step="0.1" value="0" aria-label="desenfoque">
                 </div>
                 <div>
                     <label for="grayscale-slider"class="titulo3-aside">ESCALA DE GRISES</label>
-                    <input class="input-estilo-deslizante" name="escalaDeGrises" type="range" min="10" max="100" step="1" value="0" aria-label="escala de grises">
+                    <input class="input-estilo-deslizante" name="grayscale" title="%" type="range" min="10" max="100" step="1" value="0" aria-label="escala de grises">
                 </div>
                 <div>
                     <label for="sepia-slider" class="titulo3-aside">SEPIA</label>
-                    <input class="input-estilo-deslizante" name="sepia" type="range" min="0" max="100" step="1" value="0" aria-label="sepia">
+                    <input class="input-estilo-deslizante" name="sepia" title="%" type="range" min="0" max="100" step="1" value="0" aria-label="sepia">
                 </div>
                 <div>
                     <label for="hue-slider" class="titulo3-aside">HUE</label>
-                    <input class="input-estilo-deslizante" name="hue" type="range" min="0" max="359" step="1" value="0" aria-label="hue rotar matiz">
+                    <input class="input-estilo-deslizante" name="hue-rotate" title="deg" type="range" min="0" max="359" step="1" value="0" aria-label="hue rotar matiz">
                 </div>
                 <div>
                     <label for="saturate-slider" class="titulo3-aside">SATURADO</label>
-                    <input class="input-estilo-deslizante" name="saturado" type="range" min="100" max="1000" step="10" value="100" aria-label="saturado">
+                    <input class="input-estilo-deslizante" name="saturate" title="%" type="range" min="100" max="1000" step="10" value="100" aria-label="saturado">
                 </div>
                 <div>
                     <label for="invert-slider" class="titulo3-aside">NEGATIVO</label>
-                    <input class="input-estilo-deslizante" name="negativo" type="range" min="0" max="1" step="0.1" value="0" aria-label="negativo">
+                    <input class="input-estilo-deslizante" name="invert" title="" type="range" min="0" max="1" step="0.1" value="0" aria-label="negativo">
                 </div>
                 
                 <button class="btn-filtros input-hover">Restablecer filtros</button>

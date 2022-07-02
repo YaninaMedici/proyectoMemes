@@ -10,12 +10,11 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(253, 252, 252);
     transition: .3s ease all;
-    background-color: blueviolet;
+    background-color: rgb(210, 194, 211)
     
 }
 .dark{
-    background-color: rgb(41, 40, 40);
-   
+    background-color: rgb(41, 40, 40);   
 }
 
 
@@ -103,7 +102,7 @@ Barra de navegación
     width:30px;
     height: 30px;
     position: absolute;
-    background: white;
+    background: rgb(255, 255, 255);
     top: 0;
     left: 0;
     right: unset;
