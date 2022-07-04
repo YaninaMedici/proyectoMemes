@@ -78,8 +78,8 @@
                     </div>
                 </div>       
             </div>
-            <div class="container">
-                <span class="titulo2-aside">FILTROS</span><!-- 1) Agregue title con un valor en los todos inputs 2) Modifique todos los Names 02/07/2022-->///
+            <div class="titulo2-margen"> <!-- tenia una class= "container" que le daba otro margen, no esté ni en js ni en css -->
+                <span class="titulo2-aside">FILTROS</span> <!-- 1) Agregue title con un valor en los todos inputs 2) Modifique todos los Names 02/07/2022-->
                 <div>
                     <label for="brightness-slider" class="titulo3-aside">BRILLO</label>
                     <input class="input-estilo-deslizante" name="brightness" title="%" type="range" id= "Brillito" min="10" max="100" step="0.1" value="100" aria-label="brillo">
@@ -154,23 +154,22 @@
                 <label class="titulo2-aside">FUENTE</label>
                 <select name="Tipo de fuente" id="tipo-de-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
                     <option value="Arial">Arial</option>
-                    <option value="Arial Black">Arial Black</option>
-                    <option value="American Typewriter">American Typewriter</option>
-                    <option value="Andale Mono">Andale Mono</option>
                     <option value="Comic Sans MS">Comic Sans MS</option>
                     <option value="Helvetica">Helvetica</option>
                     <option value="Impact" selected>Impact</option>
                     <option value="Verdana">Verdana</option>
                     <option value="Times New Roman">Times New Roman</option>
-                </select>                
-                <input class="input-estilo-general tamaño-fuente input-hover" type="number" name="Tamaño de fuente" id="tamanoInput" min="12" value="40" aria-label="Tamaño de fuente"/>
-                <button class="input-estilo-general justificado-fuente input-hover">
+                </select>           
+
+                <input id="tamano-de-fuente" class="input-estilo-general tamaño-fuente input-hover" type="number" name="Tamaño de fuente" min="12" value="40" aria-label="Tamaño de fuente"/>
+                
+                <button id="alinear-izquierda" class="input-estilo-general alineacion-fuente input-hover">
                     <i class="fa-solid fa-align-left"></i>
                 </button>
-                <button class="input-estilo-general justificado-fuente input-hover">
+                <button id="alinear-centro" class="input-estilo-general alineacion-fuente input-hover">
                     <i class="fa-solid fa-align-justify"></i>
                 </button>                
-                <button class="input-estilo-general justificado-fuente input-hover">
+                <button id="alinear-derecha" class="input-estilo-general alineacion-fuente input-hover">
                     <i class="fa-solid fa-align-right"></i>
                 </button>
             </div>
@@ -178,16 +177,16 @@
                 <div class="contenedor-color-fondo">
                     <div class="titulo2-margen">
                         <label class="titulo2-aside">COLOR</label>
-                        <input class="input-estilo-general input-color-fondo" type="text">
+                        <input id="input-color-texto" class="input-estilo-general input-color-fondo" type="color">
                     </div>
                     <div class="titulo2-margen">
                         <label class="titulo2-aside">FONDO</label>
-                        <input class="input-estilo-general input-color-fondo" type="text">
+                        <input id="input-color-fondo" class="input-estilo-general input-color-fondo" type="color">
                     </div>
                 </div>
                 <div>
-                    <input class="input-check" type="text">
-                    <span class="texto-check">Fondo transparente</span>
+                    <input id="input-fondo-transparente" class="input-check" type="checkbox">
+                    <label for="input-fondo-transparente" class="texto-check">Fondo transparente</label>
                 </div>
             </div>
             <div class="titulo2-margen">
