@@ -4,8 +4,18 @@ const memeTextoInferior = document.getElementById('meme-texto-inferior');
 const inputTextoInferior = document.getElementById('input-texto-inferior');
 const inputCheckboxTextoSuperior = document.getElementById('input-checkbox-texto-superior');
 const inputCheckboxTextoInferior = document.getElementById('input-checkbox-texto-inferior');
-
 const memeImagen = document.getElementById('meme-imagen');
+const tipoDeFuente = document.getElementById('tipo-de-fuente');
+const tamanoDeFuente = document.getElementById('tamano-de-fuente');
+const alinearIzquierda = document.getElementById('alinear-izquierda');
+const alinearCentro = document.getElementById('alinear-centro');
+const alinearDerecha = document.getElementById('alinear-derecha');
+const inputColorTexto = document.getElementById('input-color-texto');
+const inputColorFondo = document.getElementById('input-color-fondo');
+const inputFondoTransparente = document.getElementById('input-fondo-transparente');
+
+
+
 
 
 /* ***************
@@ -17,35 +27,91 @@ inputTextoSuperior.addEventListener('input', (event) => {
     memeTextoSuperior.innerHTML = textoIngresado;
 })
 
-inputCheckboxTextoSuperior.addEventListener('input', () => {
-    memeTextoSuperior.classList.toggle('oculto')
-})
+
 
 inputTextoInferior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
     memeTextoInferior.innerHTML = textoIngresado;
 })
 
+// inputCheckboxTextoSuperior.addEventListener('input', () => {
+//     memeTextoSuperior.classList.toggle('oculto')
+// })
+
+inputCheckboxTextoSuperior.addEventListener('input', () => {
+    if (inputCheckboxTextoSuperior.checked) {
+        memeTextoSuperior.style.display = 'none';
+        memeImagen.style.backgroundSize = 'cover';
+    }else {
+        memeTextoSuperior.style.display = 'block';
+    }
+})
+
+// inputCheckboxTextoInferior.addEventListener('input', () => {
+    //     memeTextoInferior.classList.toggle('oculto')
+// })
+
 inputCheckboxTextoInferior.addEventListener('input', () => {
-    memeTextoInferior.classList.toggle('oculto')
+    if (inputCheckboxTextoInferior.checked) {
+        memeTextoInferior.style.display = 'none';
+        memeImagen.style.backgroundSize = 'cover';
+    }else {
+        memeTextoInferior.style.display = 'block';
+    }
 })
 
 /* ***************
 Fuente
 *************** */
 
-const cambioDeFuente = () => {
-    const fuente = $('tipo-de-fuente').value
-    $('meme-texto-superior').style.fontFamily = fuente
-    $('meme-texto-inferior').style.fontFamily = fuente
-  }
+tipoDeFuente.addEventListener('input', () => {
+    memeTextoSuperior.style.fontFamily = tipoDeFuente.value;
+    memeTextoInferior.style.fontFamily = tipoDeFuente.value;
+})
 
+tamanoDeFuente.addEventListener('input', () => {
+    memeTextoSuperior.style.fontSize = `${tamanoDeFuente.value}px`;
+    memeTextoInferior.style.fontSize = `${tamanoDeFuente.value}px`;
+});
 
+alinearIzquierda.addEventListener('click', () => {
+    memeTextoSuperior.style.textAlign = 'left';
+    memeTextoInferior.style.textAlign = 'left';
+});
 
+alinearCentro.addEventListener('click', () => {
+    memeTextoSuperior.style.textAlign = 'center';
+    memeTextoInferior.style.textAlign = 'center';
+});
+
+alinearDerecha.addEventListener('click', () => {
+    memeTextoSuperior.style.textAlign = 'right';
+    memeTextoInferior.style.textAlign = 'right';
+});
+
+inputColorTexto.addEventListener('input', () => {
+    memeTextoSuperior.style.color = inputColorTexto.value;
+    memeTextoInferior.style.color = inputColorTexto.value;
+});
+
+inputColorFondo.addEventListener('input', () => {
+    memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
+    memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+});
+
+inputFondoTransparente.addEventListener('input', () => {
+    if (inputFondoTransparente.checked){
+        memeTextoSuperior.style.backgroundColor = "transparent";
+        memeTextoInferior.style.backgroundColor = "transparent";
+    }else{
+        memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
+        memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+    }
+});
 
 /* ***************
-Modo oscuro agregue este comentario nada mas-DATE 1 de julio
-*************** */
+// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
+// *************** */
 
 
 const btnSwitch = document.querySelector(`#switch`);
@@ -78,7 +144,7 @@ btnSwitch.addEventListener('click',() => {
 
          });
 
-            rangeInputOp = document.getElementById(`opaco`);  
+            rangeIv tg bvn.,jt095 yn0dxf p 7lnputOp = document.getElementById(`opaco`);  
 
              rangeInputOp.addEventListener("change",function(){
            
@@ -105,7 +171,6 @@ const urlImagen = document.getElementById("url");
       // Probando que funcione con  console.log(urlImagen.value)
 
     meme.src = urlImagen.value
-
 };
 
 /* ***************
