@@ -108,3 +108,27 @@ const urlImagen = document.getElementById("url");
 
 };
 
+/* ***************
+BOTON REESTABLECER Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
+*************** */
+
+ /* **const botonRes = document.getElementById("btnRest");
+ rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);
+
+botonRes.addEventListener("click", function(event){
+  
+  botonRes.click = clear;
+
+  
+    
+});** */
+
+
+function change (){
+
+    meme.style.filter == 0;
+   
+}
+    document.getElementById("btnRest").onclick = function(){
+        change();
+    }
