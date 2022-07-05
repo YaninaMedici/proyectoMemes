@@ -152,13 +152,16 @@
             </div>
             <div class="titulo2-margen">
                 <label class="titulo2-aside">FUENTE</label>
-                <select name="Tipo de fuente" id="tipo-de-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
+                <select id="seleccionar-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
                     <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
                     <option value="Comic Sans MS">Comic Sans MS</option>
                     <option value="Helvetica">Helvetica</option>
                     <option value="Impact" selected>Impact</option>
                     <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
+                        <option value="Times New Roman">Times New Roman</option>
                 </select>           
 
                 <input id="tamano-de-fuente" class="input-estilo-general tamaño-fuente input-hover" type="number" name="Tamaño de fuente" min="12" value="40" aria-label="Tamaño de fuente"/>
@@ -175,13 +178,21 @@
             </div>
             <div>
                 <div class="contenedor-color-fondo">
-                    <div class="titulo2-margen">
+                    <!-- cambie los dos divs de color porque tenia que crear un div dentro para el input y el span -->
+                    <div class="titulo2-margen contenedor-color">
                         <label class="titulo2-aside">COLOR</label>
-                        <input id="input-color-texto" class="input-estilo-general input-color-fondo" type="color">
+                        <div class="input-estilo-general contenedor-input-color">
+                            <input id="input-color-texto" class="input-color" type="color" value="#000000">
+                            <span>#000000</span>
+                        </div>
                     </div>
-                    <div class="titulo2-margen">
+
+                    <div class="titulo2-margen contenedor-fondo">
                         <label class="titulo2-aside">FONDO</label>
-                        <input id="input-color-fondo" class="input-estilo-general input-color-fondo" type="color">
+                        <div class="input-estilo-general contenedor-input-color">
+                            <input id="input-color-fondo" class="input-color" type="color" value="#FFFFFF">
+                            <span>#FFFFFF</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -192,18 +203,25 @@
             <div class="titulo2-margen">
                 <label class="titulo2-aside">CONTORNO</label>
                 <div>
-                    <input class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno" type="text">
-                    <input class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro" type="text">
-                    <input class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro" type="text">
+                    <input id="contorno-ninguno" class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno">
+                    <input id="contorno-claro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro">
+                    <input id="contorno-oscuro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro">
                 </div>
             </div>
             <div class="titulo2-margen">
                 <label class="titulo2-aside">ESPACIADO</label>
-                <input class="input-estilo-general input-hover" type="text">
+                <input id="espaciado" class="input-estilo-general input-hover" type="number" min="10" max="50" value="35">
             </div>
             <div class="titulo2-margen">
                 <label class="titulo2-aside">INTERLINEADO</label>
-                <input class="input-estilo-general input-hover" type="text">
+                <select id="seleccionar-interlineado" class="input-estilo-general input-hover">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
             </div>
         </div>
     </aside>

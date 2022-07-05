@@ -5,7 +5,7 @@ const inputTextoInferior = document.getElementById('input-texto-inferior');
 const inputCheckboxTextoSuperior = document.getElementById('input-checkbox-texto-superior');
 const inputCheckboxTextoInferior = document.getElementById('input-checkbox-texto-inferior');
 const memeImagen = document.getElementById('meme-imagen');
-const tipoDeFuente = document.getElementById('tipo-de-fuente');
+const seleccionarFuente = document.getElementById('seleccionar-fuente');
 const tamanoDeFuente = document.getElementById('tamano-de-fuente');
 const alinearIzquierda = document.getElementById('alinear-izquierda');
 const alinearCentro = document.getElementById('alinear-centro');
@@ -13,30 +13,34 @@ const alinearDerecha = document.getElementById('alinear-derecha');
 const inputColorTexto = document.getElementById('input-color-texto');
 const inputColorFondo = document.getElementById('input-color-fondo');
 const inputFondoTransparente = document.getElementById('input-fondo-transparente');
+const contornoNinguno = document.getElementById('contorno-ninguno');
+const contornoClaro = document.getElementById('contorno-claro');
+const contornoOscuro = document.getElementById('contorno-oscuro');
+const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
+
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* HEADER */
+/* /////////////////////////////////////////////////////////////// */
 
 
 
 
 
-/* ***************
-Texto superior - Texto inferior
-*************** */
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - TEXTO
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Texto superior *************** */
 
 inputTextoSuperior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
     memeTextoSuperior.innerHTML = textoIngresado;
 })
-
-
-
-inputTextoInferior.addEventListener('input', (event) => {
-    const textoIngresado = event.target.value;
-    memeTextoInferior.innerHTML = textoIngresado;
-})
-
-// inputCheckboxTextoSuperior.addEventListener('input', () => {
-//     memeTextoSuperior.classList.toggle('oculto')
-// })
 
 inputCheckboxTextoSuperior.addEventListener('input', () => {
     if (inputCheckboxTextoSuperior.checked) {
@@ -47,9 +51,14 @@ inputCheckboxTextoSuperior.addEventListener('input', () => {
     }
 })
 
-// inputCheckboxTextoInferior.addEventListener('input', () => {
-    //     memeTextoInferior.classList.toggle('oculto')
-// })
+
+
+                                    /* *************** Texto inferior *************** */
+
+inputTextoInferior.addEventListener('input', (event) => {
+    const textoIngresado = event.target.value;
+    memeTextoInferior.innerHTML = textoIngresado;
+})
 
 inputCheckboxTextoInferior.addEventListener('input', () => {
     if (inputCheckboxTextoInferior.checked) {
@@ -60,13 +69,13 @@ inputCheckboxTextoInferior.addEventListener('input', () => {
     }
 })
 
-/* ***************
-Fuente
-*************** */
 
-tipoDeFuente.addEventListener('input', () => {
-    memeTextoSuperior.style.fontFamily = tipoDeFuente.value;
-    memeTextoInferior.style.fontFamily = tipoDeFuente.value;
+
+                                    /* *************** Fuente *************** */
+
+seleccionarFuente.addEventListener('input', () => {
+    memeTextoSuperior.style.fontFamily = seleccionarFuente.value;
+    memeTextoInferior.style.fontFamily = seleccionarFuente.value;
 })
 
 tamanoDeFuente.addEventListener('input', () => {
@@ -89,10 +98,18 @@ alinearDerecha.addEventListener('click', () => {
     memeTextoInferior.style.textAlign = 'right';
 });
 
+
+
+                                    /* *************** Color *************** */
+
 inputColorTexto.addEventListener('input', () => {
     memeTextoSuperior.style.color = inputColorTexto.value;
     memeTextoInferior.style.color = inputColorTexto.value;
 });
+
+
+
+                                    /* *************** Fondo *************** */
 
 inputColorFondo.addEventListener('input', () => {
     memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
@@ -101,13 +118,52 @@ inputColorFondo.addEventListener('input', () => {
 
 inputFondoTransparente.addEventListener('input', () => {
     if (inputFondoTransparente.checked){
-        memeTextoSuperior.style.backgroundColor = "transparent";
-        memeTextoInferior.style.backgroundColor = "transparent";
+        memeTextoSuperior.style.backgroundColor = 'transparent';
+        memeTextoInferior.style.backgroundColor = 'transparent';
     }else{
         memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
         memeTextoInferior.style.backgroundColor = inputColorFondo.value;
     }
 });
+
+
+
+                                    /* *************** Contorno *************** */
+
+contornoNinguno.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = 'none';
+  memeTextoInferior.style.textShadow = 'none';
+});
+
+contornoClaro.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = '2px 0 0 grey, -2px 0 0 grey, 0 2px 0 grey, 0 -2px 0 grey';
+  memeTextoInferior.style.textShadow = '2px 0 0 grey, -2px 0 0 grey, 0 2px 0 grey, 0 -2px 0 grey';
+});
+
+contornoOscuro.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = '2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black';
+  memeTextoInferior.style.textShadow = '2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black';
+});
+
+
+
+                                    /* *************** Espaciado *************** */
+
+const espaciado = document.getElementById('espaciado');
+memeTextoSuperior.addEventListener('input', () => {
+    memeTextoSuperior.style.padding = `${espaciado.value}px`;
+    memeTextoInferior.style.padding = `${espaciado.value}px`;
+})
+
+
+
+                                    /* *************** Interlineado *************** */
+
+seleccionarInterlineado.addEventListener('input', () => {
+    memeTextoSuperior.style.lineHeight = seleccionarInterlineado.value;
+    memeTextoInferior.style.lineHeight = seleccionarInterlineado.value;
+})
+
 
 /* ***************
 // Modo oscuro agregue este comentario nada mas-DATE 1 de julio

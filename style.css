@@ -13,10 +13,10 @@ body{
     background-color: rgb(210, 194, 211)
     
 }
+
 .dark{
     background-color: rgb(41, 40, 40);   
 }
-
 
 .oculto{
     display: none;
@@ -142,8 +142,15 @@ Meme
     top: 90px;
 }
 
+/* .meme-imagen{ /*DAMOS ATRIBUTOS A LA CAJA MEME/*
+    position: relative;
+    width: 450px;
+    height: 280px;
+    background-color: black;
+} */
+
 .meme{
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     background-color: black; /* agregue color */
     width: 35%; /* agregue medidas de la caja meme-imagen */
@@ -153,21 +160,15 @@ Meme
     flex-direction: column;
 }
 
-#meme-texto-superior{
-    top: 0;
-}
-
 .meme-texto-superior{
-    /* position: relative; */
     background-color: white;
     color: black;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: 800;
-    height: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 20%;
+    padding-top: 15px;
 }
 
 #meme-imagen {
@@ -176,30 +177,17 @@ Meme
     background-size: cover;
 }
 
-#meme-texto-inferior{
-    bottom: 0;
-}
-
 .meme-texto-inferior{
-    /* position: relative; */
     background-color: white;
     color: black;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: 800;
-    height: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    /* top: 16px; */
+    height: 20%;
+    padding-top: 15px;
 }
 
-/* .meme-imagen{ /*DAMOS ATRIBUTOS A LA CAJA MEME/*
-    position: relative;
-    width: 450px;
-    height: 280px;
-    background-color: black;
-} */
 
 /* ***************
 Botón de descarga
@@ -209,8 +197,7 @@ Botón de descarga
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
-    top: 230px;
+    /* position: relative; */
 }
 
 .btn-main{
@@ -352,16 +339,34 @@ Botón de descarga
 
 .contenedor-color-fondo{
     display: flex;
+    justify-content: space-between;
 }
 
-.input-color-fondo{
+.contenedor-color{
+    width: 48%;
+}
+
+.contenedor-fondo{
+    width: 48%;
+}
+
+.contenedor-input-color{
     width: 95%;
-    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-color{
+    width: 20%;
+    height: 15px;
+    border: none;
+    margin-right: 8%;
 }
 
 .input-contorno-ninguno{
     width: 35%;
-   padding-left: 3%;
+    padding-left: 3%;
 }
 
 .input-contorno-claro-oscuro{
