@@ -10,14 +10,13 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(253, 252, 252);
     transition: .3s ease all;
-    background-color: blueviolet;
+    background-color: rgb(210, 194, 211)
     
 }
-.dark{
-    background-color: rgb(41, 40, 40);
-   
-}
 
+.dark{
+    background-color: rgb(41, 40, 40);   
+}
 
 .oculto{
     display: none;
@@ -27,9 +26,7 @@ body{
 /* HEADER */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Header y título
-*************** */
+                /* *************** Header y título *************** */
 
 header{
     background-color: rgb(210, 194, 211);
@@ -45,9 +42,8 @@ header{
     margin-bottom: 1%;
 }
 
-/* ***************
-Barra de navegación
-*************** */
+
+                /* *************** Barra de navegación *************** */
 
 .navegacion-menu{
     display: flex;
@@ -79,6 +75,9 @@ Barra de navegación
     background-color: rgb(237, 222, 238);
 }
 
+
+                /* *************** Modo oscuro *************** */
+
 .navegacion-btn-switch{
     display: flex;
     background-color: rgb(72, 70, 70);
@@ -86,9 +85,9 @@ Barra de navegación
     border: none;
     position: relative;
     cursor: pointer;
-    display: flex;
-    
+    display: flex;    
 }
+
 .navegacion-btn-switch span{
     width:30px;
     height: 30px;
@@ -97,42 +96,42 @@ Barra de navegación
     background: none;
     color: white;
 }
+
 .navegacion-btn-switch::after{
     content: "";
     display: block;
     width:30px;
     height: 30px;
     position: absolute;
-    background: white;
+    background: rgb(255, 255, 255);
     top: 0;
     left: 0;
     right: unset;
     border-radius: 100px;
     transition: .3s ease all;
-    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);
-  
+    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);  
 }
+
 .navegacion-btn-switch.active{
     background-color: orange;
     color: black;
     }
+
     .navegacion-btn-switch.active::after{
-        left: unset;
-         right:0 ;
-        }
+    left: unset;
+    right:0 ;
+}
 
 /* /////////////////////////////////////////////////////////////// */
 /* MAIN */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Meme
-*************** */
+                /* *************** Meme *************** */
 
 .contenedor-meme{
     background-color: rgb(215, 206, 216);
     width: 100%;
-    height: 535px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,56 +142,60 @@ Meme
     top: 90px;
 }
 
-.meme{
-    position: absolute;
-    top: 10px;
-}
-
-.meme-texto-superior{
-    position: relative;
-    background-color: white;
-    color: black;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    height: 90px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    top: 0px;
-}
-
-.meme-texto-inferior{
-    position: relative;
-    background-color: white;
-    color: black;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    height: 90px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    bottom: 0px;
-}
-
-.meme-imagen{
+/* .meme-imagen{ /*DAMOS ATRIBUTOS A LA CAJA MEME/*
     position: relative;
     width: 450px;
     height: 280px;
     background-color: black;
+} */
+
+.meme{
+    /* position: absolute; */
+    /* top: 10px; */
+    background-color: black; /* agregue color */
+    width: 35%; /* agregue medidas de la caja meme-imagen */
+    max-width: 450px;
+    height: 440px; /* agregue medidas de la caja meme-imagen */
+    display: flex;
+    flex-direction: column;
 }
 
-/* ***************
-Botón de descarga
-*************** */
+.meme-texto-superior{
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    height: 20%;
+    padding-top: 15px;
+}
+
+#meme-imagen {
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+}
+
+.meme-texto-inferior{
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    height: 20%;
+    padding-top: 15px;
+}
+
+
+                /* *************** Botón de descarga *************** */
 
 .main-contenedor-btn{
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
-    top: 230px;
+    /* position: relative; */
 }
 
 .btn-main{
@@ -236,6 +239,7 @@ Botón de descarga
 .contenedor-aside{
     width: 90%;
     padding-top: 10%;
+    background-color: red;
 }
 
 .input-estilo-general{
@@ -266,7 +270,7 @@ Botón de descarga
     position: absolute;
     width: 15%;
     height: 625px;
-    /* right: 0; */
+    right: 0;
     display: flex;
     justify-content: center;
     /* display: none; */
@@ -328,22 +332,40 @@ Botón de descarga
     width: 50%;
 }
 
-.justificado-fuente{
+.alineacion-fuente{
     width: 14%;
 }
 
 .contenedor-color-fondo{
     display: flex;
+    justify-content: space-between;
 }
 
-.input-color-fondo{
+.contenedor-color{
+    width: 48%;
+}
+
+.contenedor-fondo{
+    width: 48%;
+}
+
+.contenedor-input-color{
     width: 95%;
-    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-color{
+    width: 20%;
+    height: 15px;
+    border: none;
+    margin-right: 8%;
 }
 
 .input-contorno-ninguno{
     width: 35%;
-   padding-left: 3%;
+    padding-left: 3%;
 }
 
 .input-contorno-claro-oscuro{
