@@ -1,3 +1,8 @@
+const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
+const btnImagen = document.getElementById('btn-imagen');
+const btnTexto = document.getElementById('btn-texto');
+const asideImagen = document.getElementById('aside-imagen');
+const asideTexto = document.getElementById('aside-texto');
 const memeTextoSuperior = document.getElementById('meme-texto-superior');
 const inputTextoSuperior = document.getElementById('input-texto-superior');
 const memeTextoInferior = document.getElementById('meme-texto-inferior');
@@ -16,7 +21,7 @@ const inputFondoTransparente = document.getElementById('input-fondo-transparente
 const contornoNinguno = document.getElementById('contorno-ninguno');
 const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
-const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
+
 
 
 
@@ -27,6 +32,21 @@ const seleccionarInterlineado = document.getElementById('seleccionar-interlinead
 
 
 
+                                    /* *************** Alternar paneles - Texto / Imagen *************** */
+
+btnImagen.addEventListener('click', () => {
+    asideImagen.classList.remove('oculto');
+    asideImagen.style.display = 'block';
+    asideTexto.classList.add('oculto');
+    asideTexto.style.display = 'none';
+});
+
+btnTexto.addEventListener('click', () => {
+    asideTexto.classList.remove('oculto');
+    asideTexto.style.display = 'block';
+    asideImagen.classList.add('oculto');
+    asideImagen.style.display = 'none';
+  });
 
 
 /* /////////////////////////////////////////////////////////////// */
@@ -175,8 +195,8 @@ btnSwitch.addEventListener('click',() => {
     document.getElementById(`darki`).classList.toggle(`dark`);
     document.getElementById(`nav`).classList.toggle(`dark`);  
     document.getElementById(`section`).classList.toggle(`dark`);     
-   document.getElementById(`imagen-aside`).classList.toggle(`dark`); 
-   document.getElementById(`texto-aside`).classList.toggle(`dark`); 
+    document.getElementById(`imagen-aside`).classList.toggle(`dark`); 
+    document.getElementById(`texto-aside`).classList.toggle(`dark`); 
     btnSwitch.classList.toggle(`active`);  
 });
 

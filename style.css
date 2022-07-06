@@ -26,9 +26,7 @@ body{
 /* HEADER */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Header y título
-*************** */
+                /* *************** Header y título *************** */
 
 header{
     background-color: rgb(210, 194, 211);
@@ -44,9 +42,8 @@ header{
     margin-bottom: 1%;
 }
 
-/* ***************
-Barra de navegación
-*************** */
+
+                /* *************** Barra de navegación *************** */
 
 .navegacion-menu{
     display: flex;
@@ -78,6 +75,9 @@ Barra de navegación
     background-color: rgb(237, 222, 238);
 }
 
+
+                /* *************** Modo oscuro *************** */
+
 .navegacion-btn-switch{
     display: flex;
     background-color: rgb(72, 70, 70);
@@ -85,9 +85,9 @@ Barra de navegación
     border: none;
     position: relative;
     cursor: pointer;
-    display: flex;
-    
+    display: flex;    
 }
+
 .navegacion-btn-switch span{
     width:30px;
     height: 30px;
@@ -96,6 +96,7 @@ Barra de navegación
     background: none;
     color: white;
 }
+
 .navegacion-btn-switch::after{
     content: "";
     display: block;
@@ -108,25 +109,24 @@ Barra de navegación
     right: unset;
     border-radius: 100px;
     transition: .3s ease all;
-    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);
-  
+    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);  
 }
+
 .navegacion-btn-switch.active{
     background-color: orange;
     color: black;
     }
+
     .navegacion-btn-switch.active::after{
-        left: unset;
-         right:0 ;
-        }
+    left: unset;
+    right:0 ;
+}
 
 /* /////////////////////////////////////////////////////////////// */
 /* MAIN */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Meme
-*************** */
+                /* *************** Meme *************** */
 
 .contenedor-meme{
     background-color: rgb(215, 206, 216);
@@ -151,7 +151,7 @@ Meme
 
 .meme{
     /* position: absolute; */
-    top: 10px;
+    /* top: 10px; */
     background-color: black; /* agregue color */
     width: 35%; /* agregue medidas de la caja meme-imagen */
     max-width: 450px;
@@ -189,9 +189,7 @@ Meme
 }
 
 
-/* ***************
-Botón de descarga
-*************** */
+                /* *************** Botón de descarga *************** */
 
 .main-contenedor-btn{
     display: flex;
@@ -241,6 +239,7 @@ Botón de descarga
 .contenedor-aside{
     width: 90%;
     padding-top: 10%;
+    background-color: red;
 }
 
 .input-estilo-general{
@@ -271,7 +270,7 @@ Botón de descarga
     position: absolute;
     width: 15%;
     height: 625px;
-    /* right: 0; */
+    right: 0;
     display: flex;
     justify-content: center;
     /* display: none; */
