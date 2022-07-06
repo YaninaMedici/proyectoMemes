@@ -1,4 +1,3 @@
-const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
 const btnImagen = document.getElementById('btn-imagen');
 const btnTexto = document.getElementById('btn-texto');
 const asideImagen = document.getElementById('aside-imagen');
@@ -21,6 +20,7 @@ const inputFondoTransparente = document.getElementById('input-fondo-transparente
 const contornoNinguno = document.getElementById('contorno-ninguno');
 const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
+const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
 
 
 
@@ -34,6 +34,7 @@ const contornoOscuro = document.getElementById('contorno-oscuro');
 
                                     /* *************** Alternar paneles - Texto / Imagen *************** */
 
+                                    
 btnImagen.addEventListener('click', () => {
     asideImagen.classList.remove('oculto');
     asideImagen.style.display = 'block';
