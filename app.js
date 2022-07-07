@@ -21,20 +21,22 @@ const contornoNinguno = document.getElementById('contorno-ninguno');
 const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
 const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
+const btnDescarga = document.getElementById('btn-descarga');
+
 
 
 
 
 
 /* /////////////////////////////////////////////////////////////// */
-/* HEADER */
+/* HEADER
 /* /////////////////////////////////////////////////////////////// */
 
 
 
-                                    /* *************** Alternar paneles - Texto / Imagen *************** */
+/* *************** Alternar paneles - Texto / Imagen *************** */
 
-                                    
+
 btnImagen.addEventListener('click', () => {
     asideImagen.classList.remove('oculto');
     asideImagen.style.display = 'block';
@@ -51,13 +53,26 @@ btnTexto.addEventListener('click', () => {
 
 
 /* /////////////////////////////////////////////////////////////// */
+/* MAIN
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Botón de descarga *************** */
+
+btnDescarga.addEventListener('click', () =>
+    domtoimage.toBlob(document.getElementById('section-pp')).then(blob => 
+        saveAs(blob, 'mi-meme.png')))
+
+
+/* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - TEXTO
 /* /////////////////////////////////////////////////////////////// */
 
 
 
                                     /* *************** Texto superior *************** */
-
+                                    
 inputTextoSuperior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
     memeTextoSuperior.innerHTML = textoIngresado;
