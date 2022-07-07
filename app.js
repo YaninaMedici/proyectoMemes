@@ -34,7 +34,7 @@ const btnDescarga = document.getElementById('btn-descarga');
 
 
 
-/* *************** Alternar paneles - Texto / Imagen *************** */
+                                    /* *************** Alternar paneles - Texto / Imagen *************** */
 
 
 btnImagen.addEventListener('click', () => {
@@ -211,8 +211,8 @@ btnSwitch.addEventListener('click',() => {
     document.getElementById(`darki`).classList.toggle(`dark`);
     document.getElementById(`nav`).classList.toggle(`dark`);  
     document.getElementById(`section`).classList.toggle(`dark`);     
-    document.getElementById(`imagen-aside`).classList.toggle(`dark`); 
-    document.getElementById(`texto-aside`).classList.toggle(`dark`); 
+    document.getElementById(`aside-imagen`).classList.toggle(`dark`); 
+    document.getElementById(`aside-texto`).classList.toggle(`dark`); 
     btnSwitch.classList.toggle(`active`);  
 });
 
