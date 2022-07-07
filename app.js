@@ -218,27 +218,63 @@ btnSwitch.addEventListener('click',() => {
 
 /* *** FILTROS >> ** */ 
 
-    rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
+    const rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
     // probando console.log(rangeInput)
-    meme = document.getElementById(`imagen-aqui`);       
+    const meme = document.getElementById(`imagen-aqui`);
+    const brightness = document.getElementById(`brillito`)
+    const opacity = document.getElementById(`opaco`)
+    const contrast = document.getElementById(`contrasteu`)
+    const blure = document.getElementById(`desenfocado`)
+    const gray = document.getElementById(`grises`)
+    const sepias = document.getElementById(`sepia`)
+    const huec = document.getElementById(`hue`)
+    const saturados = document.getElementById(`saturado`)
+    const negro = document.getElementById(`negativo`)
+    
+   
+    
+    
+    
+    const filtros = () => {
 
-         Array.from(rangeInput).forEach(function(element) {
-            element.addEventListener('change',function(){ 
-                //Probando que funcione console.log("algo",element.name) 
-                meme.style.filter = element.name+"(" + element.value + element.title +")" 
-            })          
-          });
+        meme.style.filter = `brightness(${brightness.value}) 
+        opacity(${opacity.value}) 
+        contrast(${contrast.value}%) 
+        blur(${blure.value}px)
+        grayscale(${gray.value}%) 
+        sepia(${sepias.value}%) 
+        hue-rotate(${huec.value}deg) 
+        saturate(${saturados.value}%) 
+        invert(${negro.value})`;
+    }
+
+    brightness.addEventListener(`change`, filtros)
+    opacity.addEventListener(`change`, filtros)
+    contrast.addEventListener(`change`, filtros)
+    blure.addEventListener(`change`, filtros)
+    gray.addEventListener(`change`, filtros)
+    sepias.addEventListener(`change`, filtros)
+    huec.addEventListener(`change`, filtros)
+    saturados.addEventListener(`change`, filtros)
+    negro.addEventListener(`change`, filtros)
+
+
+
+
+        //  Array.from(rangeInput).forEach(function(element) {
+        //     element.addEventListener('change',function(){ 
+        //         //Probando que funcione console.log("algo",element.name) 
+        //         meme.style.filter = element.name+"(" + element.value + element.title +")" 
+        //     })          
+        //   });
+
+
 
         /* *** Empece hacer esta funcion pero la reescribi para no tener que repetir varias veces 2deJulio FE
            
 
-     meme.style.filter = "brightness(" + rangeInput.value + "%)"            
-
-         });
-
-            rangeIv tg bvn.,jt095 yn0dxf p 7lnputOp = document.getElementById(`opaco`);  
-
-             rangeInputOp.addEventListener("change",function(){
+                meme.style.filter = "brightness(" + rangeInput.value + "%)"    
+                 rangeInputOp.addEventListener("change",function(){
            
                   meme.style.filter = "opacity(" + rangeInputOp.value + "%)"            
      
@@ -248,7 +284,7 @@ btnSwitch.addEventListener('click',() => {
            
                    rangeInputCo.addEventListener("change",function(){
                  
-                        meme.style.filter = "contrast(" + rangeInputCo.value + "%)"            
+                    meme.style.filter = "contrast(" + rangeInputCo.value + "%)"            
            
                     }); **/      
 
@@ -265,3 +301,68 @@ const urlImagen = document.getElementById("url");
     meme.src = urlImagen.value
 };
 
+/* ***************
+BOTON REESTABLECER Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
+*************** */
+
+ /* **const botonRes = document.getElementById("btnRest");
+ rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);
+
+botonRes.addEventListener("click", function(event){
+  
+  botonRes.click = clear;
+
+  
+    
+});** */
+/* **const restablecer = (e) => {
+    e.preventDefault()
+    meme.style.filter = ` `;
+}
+
+
+                
+            btnRest.addEventListener(`click`,(e) => {restablecer});
+     //   change();
+   // }* */
+
+   const btnRest = document.getElementById("btnRest");
+
+   const restablecer = (e) => {
+
+    e.preventDefault()
+    meme.style.filter = `brightness(1)`;
+    meme.style.filter = `opacity(1)`;
+    meme.style.filter = `contrast(100)`;
+    meme.style.filter = `blur(0)`;
+    meme.style.filter = `grayscale(0)`;
+    meme.style.filter = `sepia(0)`;
+    meme.style.filter = `hue-rotate(0)`;
+    meme.style.filter = `saturate(100)`;
+    meme.style.filter = `invert(0)`;
+   
+
+    brightness.value = 1;
+    opacity.value = 1;
+    contrast.value = 100;
+    blure.value = 0;
+    gray.value = 0;
+    sepias.value = 0;
+    huec.value = 0;
+    saturados.value = 100;
+    negro.value = 0;
+       
+   }
+   btnRest.addEventListener(`click`,restablecer)
+   //  const btnResta = document.getElementById("btnRest");
+   // btnResta.addEventListener('click', (element) => {
+  //  document.getElementById("rangeInput").reset(); 
+
+
+//rangeInput.display.value = `clear` ;
+ //});
+
+//FUNCION RESTABLER PERO NO FUNCIONA
+   // document.getElementById('reset').onclick = function(){
+   // document.getElementById('rangeInput').value = 0;
+//}

@@ -167,8 +167,11 @@ header{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: 800;
-    height: 20%;
-    padding-top: 15px;
+    /* height: 20%;
+    padding-top: 15px; */
+    /* height: 80px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #meme-imagen {
@@ -184,8 +187,12 @@ header{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: 800;
-    height: 20%;
-    padding-top: 15px;
+    /* height: 20%;
+    padding-top: 15px; */
+    /*height: 80px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* top: 16px; */
 }
 
 
