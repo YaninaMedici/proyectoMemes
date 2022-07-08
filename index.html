@@ -66,7 +66,7 @@
 
                     <!-- *************** Meme *************** -->
 
-        <div id="section-pp" class="meme section-contenedor" ><!-- cambie el id de section-principal a section-pp 1/07/2022 FE-->
+        <div id="section-pp" class="meme" ><!-- cambie el id de section-principal a section-pp 1/07/2022 FE-->
             <p id="meme-texto-superior" class="meme-texto-superior section-barra-superior">TOP TEXT</p> 
             <div id="meme-imagen" class="meme-imagen section-barra-central"> 
                 <img src="" alt="" id ="imagen-aqui" width="450"> <!--agregue id="imagen-aqui"en la etiqueta IMG y un width para que no se vaya la imagen 01/07/2022 FE-->
@@ -99,7 +99,7 @@
 
             <div class="titulo2-margen">
                 <label class="titulo2-aside">URL</label>
-                <input class="input-estilo-general panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
+                <input class="input-estilo-general input-hover panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
                 
             </div>
 
@@ -108,13 +108,19 @@
 
             <div class="titulo2-margen">
                 <span class="titulo2-aside">FONDO</span>
-                <div class="contenedor-texto-fondo">
-                    <div>
-                        <input class="input-estilo-general input-texto-fondo" type="text" value="#FFFFFF">
+                <div class="contenedor-imagen-fondo">
+                    <div class="input-estilo-general input-hover contenedor-input-color div-fondo">
+                        <input id="fondo-color-imagen" class="input-color " type="color" value="#FFFFFF">
+                        <span>#FFFFFF</span>
                     </div>
-                    <div>
-                        <input class="input-estilo-general input-texto-fondo input-hover" type="text">
-                    </div>
+                    <select id="selector-fondo-imagen" class="input-estilo-general input-hover input-imagen-select">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select> 
                 </div>       
             </div>
             
@@ -251,7 +257,7 @@
                     
                     <div class="titulo2-margen contenedor-color">
                         <label class="titulo2-aside">COLOR</label>
-                        <div class="input-estilo-general contenedor-input-color">
+                        <div class="input-estilo-general contenedor-input-color input-hover">
                             <input id="input-color-texto" class="input-color" type="color" value="#000000">
                             <span>#000000</span>
                         </div>
@@ -262,7 +268,7 @@
 
                     <div class="titulo2-margen contenedor-fondo">
                         <label class="titulo2-aside">FONDO</label>
-                        <div class="input-estilo-general contenedor-input-color">
+                        <div class="input-estilo-general contenedor-input-color input-hover">
                             <input id="input-color-fondo" class="input-color" type="color" value="#FFFFFF">
                             <span>#FFFFFF</span>
                         </div>

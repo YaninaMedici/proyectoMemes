@@ -22,6 +22,7 @@ const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
 const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
 const btnDescarga = document.getElementById('btn-descarga');
+const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
 
 
 
@@ -49,7 +50,23 @@ btnTexto.addEventListener('click', () => {
     asideTexto.style.display = 'block';
     asideImagen.classList.add('oculto');
     asideImagen.style.display = 'none';
-  });
+});
+
+
+/* ***************
+// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
+// *************** */
+
+
+const btnSwitch = document.querySelector(`#switch`);
+btnSwitch.addEventListener('click',() => {
+    document.getElementById(`darki`).classList.toggle(`dark`);
+    document.getElementById(`nav`).classList.toggle(`dark`);  
+    document.getElementById(`section`).classList.toggle(`dark`);     
+    document.getElementById(`aside-imagen`).classList.toggle(`dark`); 
+    document.getElementById(`aside-texto`).classList.toggle(`dark`); 
+    btnSwitch.classList.toggle(`active`);  
+});
 
 
 /* /////////////////////////////////////////////////////////////// */
@@ -195,26 +212,46 @@ memeTextoSuperior.addEventListener('input', () => {
 
                                     /* *************** Interlineado *************** */
 
-seleccionarInterlineado.addEventListener('input', () => {
+                                    seleccionarInterlineado.addEventListener('input', () => {
     memeTextoSuperior.style.lineHeight = seleccionarInterlineado.value;
     memeTextoInferior.style.lineHeight = seleccionarInterlineado.value;
 })
 
 
+
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - IMAGEN
+/* /////////////////////////////////////////////////////////////// */
+
+
+                                    /* *************** URL *************** */
+
 /* ***************
-// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
-// *************** */
+URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
+*************** */
+
+const urlImagen = document.getElementById("url");
+
+    urlImagen.oninput = function() {
+    
+      // Probando que funcione con  console.log(urlImagen.value)
+
+    meme.src = urlImagen.value
+};
 
 
-const btnSwitch = document.querySelector(`#switch`);
-btnSwitch.addEventListener('click',() => {
-    document.getElementById(`darki`).classList.toggle(`dark`);
-    document.getElementById(`nav`).classList.toggle(`dark`);  
-    document.getElementById(`section`).classList.toggle(`dark`);     
-    document.getElementById(`aside-imagen`).classList.toggle(`dark`); 
-    document.getElementById(`aside-texto`).classList.toggle(`dark`); 
-    btnSwitch.classList.toggle(`active`);  
+                                    /* *************** Fondo *************** */
+
+const fondoColorImagen = document.getElementById('fondo-color-imagen')                        
+fondoColorImagen.addEventListener('input', () => {
+    memeImagen.style.color = fondoColorImagen.value;
 });
+
+selectorFondoImagen.addEventListener('input', () => {
+ memeImagen.style.backgroundBlendMode = selectorFondoImagen.value;
+})
+
+
 
 /* *** FILTROS >> ** */ 
 
@@ -288,18 +325,6 @@ btnSwitch.addEventListener('click',() => {
            
                     }); **/      
 
-/* ***************
-URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
-*************** */
-
-const urlImagen = document.getElementById("url");
-
-    urlImagen.oninput = function() {
-    
-      // Probando que funcione con  console.log(urlImagen.value)
-
-    meme.src = urlImagen.value
-};
 
 /* ***************
 BOTON REESTABLECER Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
