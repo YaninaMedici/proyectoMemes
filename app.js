@@ -22,7 +22,9 @@ const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
 const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
 const btnDescarga = document.getElementById('btn-descarga');
+const fondoColorImagen = document.getElementById('fondo-color-imagen');                        
 const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
+
 
 
 
@@ -242,9 +244,8 @@ const urlImagen = document.getElementById("url");
 
                                     /* *************** Fondo *************** */
 
-const fondoColorImagen = document.getElementById('fondo-color-imagen')                        
 fondoColorImagen.addEventListener('input', () => {
-    memeImagen.style.color = fondoColorImagen.value;
+    memeImagen.style.backgroundColor = fondoColorImagen.value;
 });
 
 selectorFondoImagen.addEventListener('input', () => {
