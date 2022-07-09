@@ -257,6 +257,10 @@ header{
     background-color: rgb(185, 158, 187);
 }
 
+.btn-cerrar-panel{
+    display: none;
+}
+
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - IMAGEN */
 /* /////////////////////////////////////////////////////////////// */
@@ -377,3 +381,29 @@ header{
 }
 
 
+
+/* /////////////////////////////////////////////////////////////// */
+/*  RESPONSIVE */
+/* /////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 480px){
+
+    .btn-cerrar-panel{
+        width: 15%;
+        height: 12px;
+        display: block;
+        background-color: transparent;
+        color: rgb(78, 77, 77);
+        border: transparent;
+        border-radius: 2px;
+        font-size: 0.45em;
+        font-weight: 900;
+        margin-left: 70%;
+    }
+
+    .btn-cerrar-panel:hover{
+        background-color: rgb(185, 158, 187);
+    }
+}
+
+/* @media screen and (min-width:481px) and (max-width: 819px){} */
