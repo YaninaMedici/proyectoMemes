@@ -232,13 +232,14 @@ memeTextoSuperior.addEventListener('input', () => {
 URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
 *************** */
 
-const urlImagen = document.getElementById("url");
+const dirImagen = document.getElementById("url");
+const meme = document.getElementById('imagen-aqui');
 
-    urlImagen.oninput = function() {
+    dirImagen.oninput = function() {
     
       // Probando que funcione con  console.log(urlImagen.value)
 
-    meme.src = urlImagen.value
+    memeImagen.style.backgroundImage = `url(${dirImagen.value})`;
 };
 
 
@@ -248,7 +249,7 @@ fondoColorImagen.addEventListener('input', () => {
     memeImagen.style.backgroundColor = fondoColorImagen.value;
 });
 
-selectorFondoImagen.addEventListener('input', () => {
+selectorFondoImagen.addEventListener('change', () => {
  memeImagen.style.backgroundBlendMode = selectorFondoImagen.value;
 })
 
@@ -258,7 +259,6 @@ selectorFondoImagen.addEventListener('input', () => {
 
     const rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
     // probando console.log(rangeInput)
-    const meme = document.getElementById(`imagen-aqui`);
     const brightness = document.getElementById(`brillito`)
     const opacity = document.getElementById(`opaco`)
     const contrast = document.getElementById(`contrasteu`)
