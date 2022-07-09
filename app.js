@@ -69,9 +69,9 @@ btnSwitch.addEventListener('click',() => {
     document.getElementById(`aside-imagen`).classList.toggle(`dark`);
     document.getElementById(`aside-texto`).classList.toggle(`dark`);
     document.getElementById(`titulo`).classList.toggle(`dark`);
-    // document.getElementById(`blanco-texto`).classList.toggle(`dark`); 
-    // document.getElementById(`blanco-imagen`).classList.toggle(`dark`);  
-    // document.getElementById(`headeri`).classList.toggle(`dark`);
+    document.getElementById(`blanco-texto`).classList.toggle(`dark`); 
+    document.getElementById(`blanco-imagen`).classList.toggle(`dark`);  
+     document.getElementById(`headeri`).classList.toggle(`dark`);
     
     btnSwitch.classList.toggle(`active`);  
 });
