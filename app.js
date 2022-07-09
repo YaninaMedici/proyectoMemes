@@ -175,9 +175,14 @@ inputFondoTransparente.addEventListener('input', () => {
     if (inputFondoTransparente.checked){
         memeTextoSuperior.style.backgroundColor = 'transparent';
         memeTextoInferior.style.backgroundColor = 'transparent';
+        memeTextoSuperior.style.position = 'absolute';
+        memeTextoInferior.style.position = 'absolute';
+        memeTextoInferior.style.top = '83%';
     }else{
         memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
         memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+        memeTextoSuperior.style.position = 'static';
+        memeTextoInferior.style.position = 'static';
     }
 });
 
