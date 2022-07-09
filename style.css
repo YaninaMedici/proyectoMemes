@@ -181,14 +181,14 @@ Meme
 }
 
 .meme-texto-inferior{
-    /* position: relative; */
+    /* position: relative; no ponerlo */
     background-color: white;
     color: black;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: 800;
-    /*height: 80px;*/
+    /*height: 80px; no ponerlo*/
     padding-top: 10px;
     padding-bottom: 10px;
     /* top: 16px; */
