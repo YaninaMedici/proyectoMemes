@@ -24,6 +24,7 @@ const seleccionarInterlineado = document.getElementById('seleccionar-interlinead
 const btnDescarga = document.getElementById('btn-descarga');
 const fondoColorImagen = document.getElementById('fondo-color-imagen');                        
 const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
+const spanColorImagen = document.getElementById('span-color-imagen');
 
 
 
@@ -157,18 +158,22 @@ alinearDerecha.addEventListener('click', () => {
 
                                     /* *************** Color *************** */
 
+const spanColorTexto = document.getElementById('span-color-texto');
 inputColorTexto.addEventListener('input', () => {
     memeTextoSuperior.style.color = inputColorTexto.value;
     memeTextoInferior.style.color = inputColorTexto.value;
+    spanColorTexto.innerHTML = `${inputColorTexto.value}`;
 });
 
 
 
                                     /* *************** Fondo *************** */
 
+const spanFondoTexto = document.getElementById('span-fondo-texto');
 inputColorFondo.addEventListener('input', () => {
     memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
     memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+    spanFondoTexto.innerHTML = `${inputColorFondo.value}`; 
 });
 
 inputFondoTransparente.addEventListener('input', () => {
@@ -210,7 +215,7 @@ contornoOscuro.addEventListener('click', () => {
                                     /* *************** Espaciado *************** */
 
 const espaciado = document.getElementById('espaciado');
-memeTextoSuperior.addEventListener('input', () => {
+espaciado.addEventListener('input', () => {
     memeTextoSuperior.style.padding = `${espaciado.value}px`;
     memeTextoInferior.style.padding = `${espaciado.value}px`;
 })
@@ -249,14 +254,15 @@ const meme = document.getElementById('imagen-aqui');
 
 
                                     /* *************** Fondo *************** */
-
+                                    
 fondoColorImagen.addEventListener('input', () => {
     memeImagen.style.backgroundColor = fondoColorImagen.value;
+    spanColorImagen.innerHTML = `${fondoColorImagen.value}`;
 });
 
 selectorFondoImagen.addEventListener('change', () => {
  memeImagen.style.backgroundBlendMode = selectorFondoImagen.value;
-})
+});
 
 
 
