@@ -62,11 +62,17 @@ btnTexto.addEventListener('click', () => {
 
 const btnSwitch = document.querySelector(`#switch`);
 btnSwitch.addEventListener('click',() => {
+    
     document.getElementById(`darki`).classList.toggle(`dark`);
     document.getElementById(`nav`).classList.toggle(`dark`);  
     document.getElementById(`section`).classList.toggle(`dark`);     
-    document.getElementById(`aside-imagen`).classList.toggle(`dark`); 
-    document.getElementById(`aside-texto`).classList.toggle(`dark`); 
+    document.getElementById(`aside-imagen`).classList.toggle(`dark`);
+    document.getElementById(`aside-texto`).classList.toggle(`dark`);
+    document.getElementById(`titulo`).classList.toggle(`dark`);
+    // document.getElementById(`blanco-texto`).classList.toggle(`dark`); 
+    // document.getElementById(`blanco-imagen`).classList.toggle(`dark`);  
+    // document.getElementById(`headeri`).classList.toggle(`dark`);
+    
     btnSwitch.classList.toggle(`active`);  
 });
 
