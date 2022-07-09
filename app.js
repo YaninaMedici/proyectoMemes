@@ -1,3 +1,7 @@
+const btnImagen = document.getElementById('btn-imagen');
+const btnTexto = document.getElementById('btn-texto');
+const asideImagen = document.getElementById('aside-imagen');
+const asideTexto = document.getElementById('aside-texto');
 const memeTextoSuperior = document.getElementById('meme-texto-superior');
 const inputTextoSuperior = document.getElementById('input-texto-superior');
 const memeTextoInferior = document.getElementById('meme-texto-inferior');
@@ -5,7 +9,7 @@ const inputTextoInferior = document.getElementById('input-texto-inferior');
 const inputCheckboxTextoSuperior = document.getElementById('input-checkbox-texto-superior');
 const inputCheckboxTextoInferior = document.getElementById('input-checkbox-texto-inferior');
 const memeImagen = document.getElementById('meme-imagen');
-const tipoDeFuente = document.getElementById('tipo-de-fuente');
+const seleccionarFuente = document.getElementById('seleccionar-fuente');
 const tamanoDeFuente = document.getElementById('tamano-de-fuente');
 const alinearIzquierda = document.getElementById('alinear-izquierda');
 const alinearCentro = document.getElementById('alinear-centro');
@@ -13,30 +17,85 @@ const alinearDerecha = document.getElementById('alinear-derecha');
 const inputColorTexto = document.getElementById('input-color-texto');
 const inputColorFondo = document.getElementById('input-color-fondo');
 const inputFondoTransparente = document.getElementById('input-fondo-transparente');
+const contornoNinguno = document.getElementById('contorno-ninguno');
+const contornoClaro = document.getElementById('contorno-claro');
+const contornoOscuro = document.getElementById('contorno-oscuro');
+const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
+const btnDescarga = document.getElementById('btn-descarga');
+const fondoColorImagen = document.getElementById('fondo-color-imagen');                        
+const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
 
 
 
+
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* HEADER
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Alternar paneles - Texto / Imagen *************** */
+
+
+btnImagen.addEventListener('click', () => {
+    asideImagen.classList.remove('oculto');
+    asideImagen.style.display = 'block';
+    asideTexto.classList.add('oculto');
+    asideTexto.style.display = 'none';
+});
+
+btnTexto.addEventListener('click', () => {
+    asideTexto.classList.remove('oculto');
+    asideTexto.style.display = 'block';
+    asideImagen.classList.add('oculto');
+    asideImagen.style.display = 'none';
+});
 
 
 /* ***************
-Texto superior - Texto inferior
-*************** */
+// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
+// *************** */
 
+
+const btnSwitch = document.querySelector(`#switch`);
+btnSwitch.addEventListener('click',() => {
+    document.getElementById(`darki`).classList.toggle(`dark`);
+    document.getElementById(`nav`).classList.toggle(`dark`);  
+    document.getElementById(`section`).classList.toggle(`dark`);     
+    document.getElementById(`aside-imagen`).classList.toggle(`dark`); 
+    document.getElementById(`aside-texto`).classList.toggle(`dark`); 
+    btnSwitch.classList.toggle(`active`);  
+});
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* MAIN
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Botón de descarga *************** */
+
+btnDescarga.addEventListener('click', () =>
+    domtoimage.toBlob(document.getElementById('section-pp')).then(blob => 
+        saveAs(blob, 'mi-meme.png')))
+
+
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - TEXTO
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Texto superior *************** */
+                                    
 inputTextoSuperior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
     memeTextoSuperior.innerHTML = textoIngresado;
 })
-
-
-
-inputTextoInferior.addEventListener('input', (event) => {
-    const textoIngresado = event.target.value;
-    memeTextoInferior.innerHTML = textoIngresado;
-})
-
-// inputCheckboxTextoSuperior.addEventListener('input', () => {
-//     memeTextoSuperior.classList.toggle('oculto')
-// })
 
 inputCheckboxTextoSuperior.addEventListener('input', () => {
     if (inputCheckboxTextoSuperior.checked) {
@@ -47,9 +106,14 @@ inputCheckboxTextoSuperior.addEventListener('input', () => {
     }
 })
 
-// inputCheckboxTextoInferior.addEventListener('input', () => {
-    //     memeTextoInferior.classList.toggle('oculto')
-// })
+
+
+                                    /* *************** Texto inferior *************** */
+
+inputTextoInferior.addEventListener('input', (event) => {
+    const textoIngresado = event.target.value;
+    memeTextoInferior.innerHTML = textoIngresado;
+})
 
 inputCheckboxTextoInferior.addEventListener('input', () => {
     if (inputCheckboxTextoInferior.checked) {
@@ -60,13 +124,13 @@ inputCheckboxTextoInferior.addEventListener('input', () => {
     }
 })
 
-/* ***************
-Fuente
-*************** */
 
-tipoDeFuente.addEventListener('input', () => {
-    memeTextoSuperior.style.fontFamily = tipoDeFuente.value;
-    memeTextoInferior.style.fontFamily = tipoDeFuente.value;
+
+                                    /* *************** Fuente *************** */
+
+seleccionarFuente.addEventListener('input', () => {
+    memeTextoSuperior.style.fontFamily = seleccionarFuente.value;
+    memeTextoInferior.style.fontFamily = seleccionarFuente.value;
 })
 
 tamanoDeFuente.addEventListener('input', () => {
@@ -89,10 +153,18 @@ alinearDerecha.addEventListener('click', () => {
     memeTextoInferior.style.textAlign = 'right';
 });
 
+
+
+                                    /* *************** Color *************** */
+
 inputColorTexto.addEventListener('input', () => {
     memeTextoSuperior.style.color = inputColorTexto.value;
     memeTextoInferior.style.color = inputColorTexto.value;
 });
+
+
+
+                                    /* *************** Fondo *************** */
 
 inputColorFondo.addEventListener('input', () => {
     memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
@@ -101,34 +173,92 @@ inputColorFondo.addEventListener('input', () => {
 
 inputFondoTransparente.addEventListener('input', () => {
     if (inputFondoTransparente.checked){
-        memeTextoSuperior.style.backgroundColor = "transparent";
-        memeTextoInferior.style.backgroundColor = "transparent";
+        memeTextoSuperior.style.backgroundColor = 'transparent';
+        memeTextoInferior.style.backgroundColor = 'transparent';
     }else{
         memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
         memeTextoInferior.style.backgroundColor = inputColorFondo.value;
     }
 });
 
-/* ***************
-// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
-// *************** */
 
 
-const btnSwitch = document.querySelector(`#switch`);
-btnSwitch.addEventListener('click',() => {
-    document.getElementById(`darki`).classList.toggle(`dark`);
-    document.getElementById(`nav`).classList.toggle(`dark`);  
-    document.getElementById(`section`).classList.toggle(`dark`);     
-   document.getElementById(`imagen-aside`).classList.toggle(`dark`); 
-   document.getElementById(`texto-aside`).classList.toggle(`dark`); 
-    btnSwitch.classList.toggle(`active`);  
+                                    /* *************** Contorno *************** */
+
+contornoNinguno.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = 'none';
+  memeTextoInferior.style.textShadow = 'none';
 });
+
+contornoClaro.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = '2px 0 0 grey, -2px 0 0 grey, 0 2px 0 grey, 0 -2px 0 grey';
+  memeTextoInferior.style.textShadow = '2px 0 0 grey, -2px 0 0 grey, 0 2px 0 grey, 0 -2px 0 grey';
+});
+
+contornoOscuro.addEventListener('click', () => {
+  memeTextoSuperior.style.textShadow = '2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black';
+  memeTextoInferior.style.textShadow = '2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black';
+});
+
+
+
+                                    /* *************** Espaciado *************** */
+
+const espaciado = document.getElementById('espaciado');
+memeTextoSuperior.addEventListener('input', () => {
+    memeTextoSuperior.style.padding = `${espaciado.value}px`;
+    memeTextoInferior.style.padding = `${espaciado.value}px`;
+})
+
+
+
+                                    /* *************** Interlineado *************** */
+
+                                    seleccionarInterlineado.addEventListener('input', () => {
+    memeTextoSuperior.style.lineHeight = seleccionarInterlineado.value;
+    memeTextoInferior.style.lineHeight = seleccionarInterlineado.value;
+})
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - IMAGEN
+/* /////////////////////////////////////////////////////////////// */
+
+
+                                    /* *************** URL *************** */
+
+/* ***************
+URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
+*************** */
+
+const dirImagen = document.getElementById("url");
+const meme = document.getElementById('imagen-aqui');
+
+    dirImagen.oninput = function() {
+    
+      // Probando que funcione con  console.log(urlImagen.value)
+
+    memeImagen.style.backgroundImage = `url(${dirImagen.value})`;
+};
+
+
+                                    /* *************** Fondo *************** */
+
+fondoColorImagen.addEventListener('input', () => {
+    memeImagen.style.backgroundColor = fondoColorImagen.value;
+});
+
+selectorFondoImagen.addEventListener('change', () => {
+ memeImagen.style.backgroundBlendMode = selectorFondoImagen.value;
+})
+
+
 
 /* *** FILTROS >> ** */ 
 
     const rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
     // probando console.log(rangeInput)
-    const meme = document.getElementById(`imagen-aqui`);
     const brightness = document.getElementById(`brillito`)
     const opacity = document.getElementById(`opaco`)
     const contrast = document.getElementById(`contrasteu`)
@@ -196,18 +326,6 @@ btnSwitch.addEventListener('click',() => {
            
                     }); **/      
 
-/* ***************
-URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
-*************** */
-
-const urlImagen = document.getElementById("url");
-
-    urlImagen.oninput = function() {
-    
-      // Probando que funcione con  console.log(urlImagen.value)
-
-    meme.src = urlImagen.value
-};
 
 /* ***************
 BOTON REESTABLECER Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE

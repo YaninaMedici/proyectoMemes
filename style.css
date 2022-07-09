@@ -8,27 +8,26 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(253, 252, 252);
+    color: rgb(78, 77, 77);
     transition: .3s ease all;
     background-color: rgb(210, 194, 211)
     
 }
+
 .dark{
     background-color: rgb(41, 40, 40);   
 }
-
 
 .oculto{
     display: none;
 }
 
+
 /* /////////////////////////////////////////////////////////////// */
 /* HEADER */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Header y título
-*************** */
+                /* *************** Header y título *************** */
 
 header{
     background-color: rgb(210, 194, 211);
@@ -44,9 +43,8 @@ header{
     margin-bottom: 1%;
 }
 
-/* ***************
-Barra de navegación
-*************** */
+
+                /* *************** Barra de navegación *************** */
 
 .navegacion-menu{
     display: flex;
@@ -68,6 +66,7 @@ Barra de navegación
 .navegacion-icono{
     color: rgb(78, 77, 77);
     font-size: 1em;
+
 }
 
 .navegacion-btn:hover{
@@ -78,6 +77,9 @@ Barra de navegación
     background-color: rgb(237, 222, 238);
 }
 
+
+                /* *************** Modo oscuro *************** */
+
 .navegacion-btn-switch{
     display: flex;
     background-color: rgb(72, 70, 70);
@@ -85,9 +87,9 @@ Barra de navegación
     border: none;
     position: relative;
     cursor: pointer;
-    display: flex;
-    
+    display: flex;    
 }
+
 .navegacion-btn-switch span{
     width:30px;
     height: 30px;
@@ -96,6 +98,7 @@ Barra de navegación
     background: none;
     color: white;
 }
+
 .navegacion-btn-switch::after{
     content: "";
     display: block;
@@ -108,30 +111,30 @@ Barra de navegación
     right: unset;
     border-radius: 100px;
     transition: .3s ease all;
-    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);
-  
+    box-shadow: 0px 0px 1px 1px rgb(255, 202, 202);  
 }
+
 .navegacion-btn-switch.active{
     background-color: orange;
     color: black;
     }
+
     .navegacion-btn-switch.active::after{
-        left: unset;
-         right:0 ;
-        }
+    left: unset;
+    right:0 ;
+}
 
 /* /////////////////////////////////////////////////////////////// */
 /* MAIN */
 /* /////////////////////////////////////////////////////////////// */
 
-/* ***************
-Meme
-*************** */
+                /* *************** Meme *************** */
 
 .contenedor-meme{
     background-color: rgb(215, 206, 216);
     width: 100%;
-    height: 550px;
+    height: 535px;
+    top: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,78 +142,52 @@ Meme
     padding-left: 10px;
     padding-right: 10px;
     position: absolute;
-    top: 90px;
 }
 
 .meme{
-    position: absolute;
-    top: 10px;
-    background-color: black; /* agregue color */
-    width: 35%; /* agregue medidas de la caja meme-imagen */
-    max-width: 450px;
-    height: 440px; /* agregue medidas de la caja meme-imagen */
+    width: 35%;
+    background-color: black;
+    margin: 2%;
+    height: 500px;
+    border: none;
     display: flex;
     flex-direction: column;
-}
-
-#meme-texto-superior{
-    top: 0;
-}
-
-.meme-texto-superior{
-    /* position: relative; */
-    background-color: white;
-    color: black;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    /* height: 80px; */
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#meme-imagen {
-    width: 100%;
-    flex-grow: 1;
-    background-size: cover;
-}
-
-#meme-texto-inferior{
-    bottom: 0;
-}
-
-.meme-texto-inferior{
-    /* position: relative; no ponerlo */
-    background-color: white;
-    color: black;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    /*height: 80px; no ponerlo*/
-    padding-top: 10px;
-    padding-bottom: 10px;
-    /* top: 16px; */
-}
-
-/* .meme-imagen{ /*DAMOS ATRIBUTOS A LA CAJA MEME/*
+    justify-content: space-between;
     position: relative;
-    width: 450px;
-    height: 280px;
-    background-color: black;
-} */
+}
 
-/* ***************
-Botón de descarga
-*************** */
+.meme-texto-superior, .meme-texto-inferior{
+    background-color: white;
+    color: black;
+    height: 20%;
+    width: 100%;
+    margin: 0%;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 3%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+    position: static;
+}
+
+.meme-imagen{
+    width: 100%;
+    height: 100%;
+    display: block;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+}
+
+
+                /* *************** Botón de descarga *************** */
 
 .main-contenedor-btn{
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
-    top: 230px;
 }
 
 .btn-main{
@@ -236,6 +213,19 @@ Botón de descarga
 /*  ASIDE - GENERAL
 /* /////////////////////////////////////////////////////////////// */
 
+.aside-imagen-texto{
+    background-color: rgb(237, 222, 238);
+    position: absolute;
+    width: 15%;
+    height: 625px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+}
+
 .titulo1-aside{
     font-size: 0.9em;
     text-align: center;
@@ -251,10 +241,6 @@ Botón de descarga
     font-weight: 700;    
 }
 
-.contenedor-aside{
-    width: 90%;
-    padding-top: 10%;
-}
 
 .input-estilo-general{
     width: 100%;
@@ -279,28 +265,26 @@ Botón de descarga
 /*  ASIDE - IMAGEN */
 /* /////////////////////////////////////////////////////////////// */
 
-.aside-imagen{
-    background-color: rgb(237, 222, 238);
-    position: absolute;
-    width: 15%;
-    height: 625px;
-    /* right: 0; */
+
+.contenedor-imagen-fondo{
     display: flex;
-    justify-content: center;
-    /* display: none; */
+    width: 98%;
+    justify-content: space-between;
 }
 
-.contenedor-texto-fondo{
-    display: flex
-}
-
-.input-texto-fondo{
-    width: 95%;
-    margin-left: 3%;
+.input-imagen-select{
+    margin-left: 5%;
 }
 
 .titulo3-aside{
     font-size: 0.65em;
+}
+
+.input-fondo{
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .input-estilo-deslizante{
@@ -316,6 +300,14 @@ Botón de descarga
     border: none;
     border-radius: 3px;
     margin-top: 5%;
+}
+
+.btn-filtros:hover{
+    background-color: rgb(185, 158, 187);
+}
+
+.btn-filtros:focus{
+    background-color: rgb(185, 158, 187);
 }
 
 /* /////////////////////////////////////////////////////////////// */
@@ -352,16 +344,35 @@ Botón de descarga
 
 .contenedor-color-fondo{
     display: flex;
+    justify-content: space-between;
 }
 
-.input-color-fondo{
+.contenedor-color{
+    width: 48%;
+}
+
+.contenedor-fondo{
+    width: 48%;
+}
+
+.contenedor-input-color{
     width: 95%;
-    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-color{
+    width: 20%;
+    height: 20px;
+    border: none;
+    border-color: transparent;
+    margin-right: 8%;
 }
 
 .input-contorno-ninguno{
     width: 35%;
-   padding-left: 3%;
+    padding-left: 3%;
 }
 
 .input-contorno-claro-oscuro{

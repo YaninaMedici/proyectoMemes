@@ -4,28 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./style.css">
     <title>Editor de memes</title>
 </head>
 <body class="dark" id="darki">
 
+
+
     <!-- //////////////////////////////////////////////////////////////
     HEADER
     ////////////////////////////////////////////////////////////// -->
+    
     <header>
+        
         <nav id="nav">
+
+
+                    <!-- *************** Título *************** -->
+
             <h1 class="titulo">Generador de Memes</h1>
-            <div class="navegacion-menu">
-                <button class="navegacion-btn">
+
+
+                    <!-- *************** Barra de navegación *************** -->
+            
+            <div class="navegacion-menu">  
+                <button id="btn-imagen" class="navegacion-btn">
                     <i class="fa-solid fa-file-image navegacion-icono"></i>
                     Imagen
                 </button>
-                <button class="navegacion-btn">
+                <button id="btn-texto" class="navegacion-btn">
                     <i class="fa-solid fa-font"></i>
                     Texto
                 </button>
+            
+
+                    <!-- *************** Modo oscuro *************** -->
+
                 <button class="navegacion-btn-switch active" id="switch">
                   <span><i class="fa-solid fa-sun sol"></i></span> 
                   <span><i class="fa-solid fa-moon luna"></i></span>               
@@ -33,51 +51,82 @@
                 </button> 
             </div>
         </nav>
+
     </header>
+
+
 
     <!-- //////////////////////////////////////////////////////////////
     MAIN
     ////////////////////////////////////////////////////////////// -->
     
     <main class="contenedor-meme" id="section">
-        <div id="section-pp" class="meme section-contenedor" ><!-- cambie el id de section-principal a section-pp 1/07/2022 FE-->
+
+
+                    <!-- *************** Meme *************** -->
+
+        <div id="section-pp" class="meme" ><!-- cambie el id de section-principal a section-pp 1/07/2022 FE-->
             <p id="meme-texto-superior" class="meme-texto-superior section-barra-superior">TOP TEXT</p> 
             <div id="meme-imagen" class="meme-imagen section-barra-central"> 
-                <img src="" alt="" id ="imagen-aqui" width="450"> <!--agregue id="imagen-aqui"en la etiqueta IMG y un width para que no se vaya la imagen 01/07/2022 FE-->
+                <!-- <img src="" alt="" id ="imagen-aqui" width="450">  -->
+                <!--agregue id="imagen-aqui"en la etiqueta IMG y un width para que no se vaya la imagen 01/07/2022 FE-->
             </div>
             <p id="meme-texto-inferior" class="meme-texto-inferior">BOTTOM TEXT</p> 
         </div>
-        <div class="main-contenedor-btn">
-            <button class="btn-main">
+        
+        
+                    <!-- *************** Botón de descarga *************** -->
+                    
+        <div id="btn-descarga" class="main-contenedor-btn">
+            <button  class="btn-main">
                 <i class="fa-solid fa-download main-icono"></i>
                 Descargar meme
             </button>
         </div>
+
     </main>
 
     <!-- //////////////////////////////////////////////////////////////
     ASIDE - IMAGEN
     ////////////////////////////////////////////////////////////// -->
     
-    <aside class="aside-imagen"> 
-        <div class="contenedor-aside" id="imagen-aside"> 
+    <aside id="aside-imagen" class="aside-imagen-texto"> 
+        <div id="imagen-aside"> 
             <h3 class="titulo1-aside">IMAGEN</h3>
+
+
+                    <!-- *************** URL *************** -->
+
             <div class="titulo2-margen">
                 <label class="titulo2-aside">URL</label>
-                <input class="panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
+                <input class="input-estilo-general input-hover panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
                 
             </div>
+
+
+                    <!-- *************** Fondo *************** -->
+
             <div class="titulo2-margen">
                 <span class="titulo2-aside">FONDO</span>
-                <div class="contenedor-texto-fondo">
-                    <div>
-                        <input class="input-estilo-general input-texto-fondo" type="text" value="#FFFFFF">
+                <div class="contenedor-imagen-fondo">
+                    <div class="input-estilo-general input-hover contenedor-input-color div-fondo">
+                        <input id="fondo-color-imagen" class="input-color " type="color" value="#FFFFFF">
+                        <span id="span-color">#FFFFFF</span>
                     </div>
-                    <div>
-                        <input class="input-estilo-general input-texto-fondo input-hover" type="text">
-                    </div>
+                    <select id="selector-fondo-imagen" class="input-estilo-general input-hover input-imagen-select">
+                        <option value="unset" selected>Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select> 
                 </div>       
             </div>
+            
+            
+                    <!-- *************** Filtros *************** -->
+
             <div class="titulo2-margen"> <!-- tenia una class= "container" que le daba otro margen, no esté ni en js ni en css -->
                 <span class="titulo2-aside">FILTROS</span> <!-- 1) Agregue title con un valor en los todos inputs 2) Modifique todos los Names 02/07/2022-->
                 <div>
@@ -116,7 +165,10 @@
                     <label for="invert-slider" class="titulo3-aside">NEGATIVO</label>
                     <input class="input-estilo-deslizante" name="invert" title="" type="range" id="negativo" min="0" max="1" step="0.1" value="0" aria-label="negativo">
                 </div>
+
                 
+                    <!-- *************** Restablecer filtros *************** -->
+                    
                 <button class="btn-filtros input-hover" id="btnRest">Restablecer filtros</button>
             </div>
         </div>
@@ -127,9 +179,13 @@
     ////////////////////////////////////////////////////////
     ////// -->
     
-    <aside class="aside-texto">
-        <div class="contenedor-aside" id="texto-aside">
+    <aside id="aside-texto" class="aside-imagen-texto">
+        <div id="texto-aside">
             <h3 class="titulo1-aside">TEXTO</h3>
+
+
+                    <!-- *************** Texto superior *************** -->
+
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">SUPERIOR</label>
@@ -140,6 +196,10 @@
                     <label for="input-checkbox-texto-superior" class="texto-check">Sin texto superior</label>
                 </div>
             </div>
+
+
+                    <!-- *************** Texto inferior *************** -->
+
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">INFERIOR</label>
@@ -150,19 +210,32 @@
                     <label for="input-checkbox-texto-inferior" class="texto-check">Sin texto inferior</label>
                 </div>
             </div>
+
+
+                    <!-- *************** Fuente *************** -->
+
             <div class="titulo2-margen">
                 <label class="titulo2-aside">FUENTE</label>
-                <select name="Tipo de fuente" id="tipo-de-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
+                <select id="seleccionar-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
                     <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
                     <option value="Comic Sans MS">Comic Sans MS</option>
                     <option value="Helvetica">Helvetica</option>
                     <option value="Impact" selected>Impact</option>
                     <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
+                        <option value="Times New Roman">Times New Roman</option>
                 </select>           
+
+
+                    <!-- *************** Tamaño de fuente *************** -->
 
                 <input id="tamano-de-fuente" class="input-estilo-general tamaño-fuente input-hover" type="number" name="Tamaño de fuente" min="12" max="85" value="40" aria-label="Tamaño de fuente"/>
                 
+
+                    <!-- *************** Alineación *************** -->
+
                 <button id="alinear-izquierda" class="input-estilo-general alineacion-fuente input-hover">
                     <i class="fa-solid fa-align-left"></i>
                 </button>
@@ -173,15 +246,32 @@
                     <i class="fa-solid fa-align-right"></i>
                 </button>
             </div>
+
+            
+            
             <div>
-                <div class="contenedor-color-fondo">
-                    <div class="titulo2-margen">
+                <div class="contenedor-color-fondo">  <!-- cambie los dos divs de color porque tenia que crear un div dentro para el input y el span -->
+                    
+                    
+                    <!-- *************** Color *************** -->
+                    
+                    <div class="titulo2-margen contenedor-color">
                         <label class="titulo2-aside">COLOR</label>
-                        <input id="input-color-texto" class="input-estilo-general input-color-fondo" type="color">
+                        <div class="input-estilo-general contenedor-input-color input-hover">
+                            <input id="input-color-texto" class="input-color" type="color" value="#000000">
+                            <span>#000000</span>
+                        </div>
                     </div>
-                    <div class="titulo2-margen">
+                    
+
+                    <!-- *************** Fondo *************** -->
+
+                    <div class="titulo2-margen contenedor-fondo">
                         <label class="titulo2-aside">FONDO</label>
-                        <input id="input-color-fondo" class="input-estilo-general input-color-fondo" type="color">
+                        <div class="input-estilo-general contenedor-input-color input-hover">
+                            <input id="input-color-fondo" class="input-color" type="color" value="#FFFFFF">
+                            <span>#FFFFFF</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -189,29 +279,46 @@
                     <label for="input-fondo-transparente" class="texto-check">Fondo transparente</label>
                 </div>
             </div>
+
+
+                    <!-- *************** Contorno *************** -->
+
             <div class="titulo2-margen">
                 <label class="titulo2-aside">CONTORNO</label>
                 <div>
-                    <input class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno" type="text">
-                    <input class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro" type="text">
-                    <input class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro" type="text">
+                    <input id="contorno-ninguno" class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno">
+                    <input id="contorno-claro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro">
+                    <input id="contorno-oscuro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro">
                 </div>
             </div>
+
+
+                    <!-- *************** Espaciado *************** -->
+
             <div class="titulo2-margen">
                 <label class="titulo2-aside">ESPACIADO</label>
-                <input class="input-estilo-general input-hover" type="text">
+                <input id="espaciado" class="input-estilo-general input-hover" type="number" min="10" max="50" value="35">
             </div>
+
+
+                    <!-- *************** Interlineado *************** -->
+
             <div class="titulo2-margen">
                 <label class="titulo2-aside">INTERLINEADO</label>
-                <input class="input-estilo-general input-hover" type="text">
+                <select id="seleccionar-interlineado" class="input-estilo-general input-hover">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
             </div>
         </div>
     </aside>
     
-    
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>
