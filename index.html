@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css">
     <title>Editor de memes</title>
 </head>
-<body class="dark" id="darki">
+<body id="darki" cz-shortcut-listen="true">
 
 
 
@@ -19,7 +19,7 @@
     HEADER
     ////////////////////////////////////////////////////////////// -->
     
-    <header>
+    <header id="headeri">
         
         <nav id="nav">
 
@@ -32,19 +32,19 @@
                     <!-- *************** Barra de navegación *************** -->
             
             <div class="navegacion-menu">  
-                <button id="btn-imagen" class="navegacion-btn">
-                    <i class="fa-solid fa-file-image navegacion-icono"></i>
+                <button id="btn-imagen" class="navegacion-btn" aria-label="Boton de panel imagen">
+                    <i id="blanco-imagen"class="fa-solid fa-file-image navegacion-icono-imagen" aria-hidden="true"></i>
                     Imagen
                 </button>
-                <button id="btn-texto" class="navegacion-btn">
-                    <i class="fa-solid fa-font"></i>
-                    Texto
+                <button id="btn-texto" class="navegacion-btn" aria-label="Boton de panel texto">
+                    <i id="blanco-texto"class="fa-solid fa-font navegacion-icono-texto"></i>
+                    Texto 
                 </button>
             
 
                     <!-- *************** Modo oscuro *************** -->
 
-                <button class="navegacion-btn-switch active" id="switch">
+                <button class="navegacion-btn-switch active" id="switch" aria-label="Boton cambiar a modo oscuro">
                   <span><i class="fa-solid fa-sun sol"></i></span> 
                   <span><i class="fa-solid fa-moon luna"></i></span>               
         
@@ -67,7 +67,7 @@
 
         <div id="section-pp" class="meme">
             <p id="meme-texto-superior" class="meme-texto-superior section-barra-superior">TOP TEXT</p> 
-            <div id="meme-imagen" class="meme-imagen section-barra-central"> 
+            <div id="meme-imagen" class="meme-imagen section-barra-central" aria-label="Ingrese una URL de imagen"> 
             </div>
             <p id="meme-texto-inferior" class="meme-texto-inferior">BOTTOM TEXT</p> 
         </div>
@@ -106,7 +106,7 @@
 
             <div class="titulo2-margen">
                 <label class="titulo2-aside">URL</label>
-                <input class="input-estilo-general input-hover panel-control-input inmeme" id="url" type="text">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
+                <input class="input-estilo-general input-hover panel-control-input inmeme" id="url" type="text" aria-label="Ingrese url de imagen">  <!--agregue id="url" 01/07/2022 FE y agregue clase inmeme 2/07/2022-->
                 
             </div>
 
@@ -117,10 +117,10 @@
                 <span class="titulo2-aside">FONDO</span>
                 <div class="contenedor-imagen-fondo">
                     <div class="input-estilo-general input-hover contenedor-input-color div-fondo">
-                        <input id="fondo-color-imagen" class="input-color " type="color" value="#FFFFFF">
+                        <input id="fondo-color-imagen" class="input-color " type="color" value="#FFFFFF" aria-label="Seleccione un color de fondo para la imagen">
                         <span id="span-color-imagen">#FFFFFF</span>
                     </div>
-                    <select id="selector-fondo-imagen" class="input-estilo-general input-hover input-imagen-select">
+                    <select id="selector-fondo-imagen" class="input-estilo-general input-hover input-imagen-select" aria-expanded="true">
                         <option value="unset" selected>Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="darken">Oscurecer</option>
@@ -205,10 +205,10 @@
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">SUPERIOR</label>
-                    <input id="input-texto-superior" class="input-estilo-general input-hover" type="text" value="TOP TEXT">
+                    <input id="input-texto-superior" class="input-estilo-general input-hover" type="text" value="TOP TEXT" aria-label="Ingrese un texto superior">
                 </div>              
                 <div>
-                    <input id="input-checkbox-texto-superior" class="input-check" type="checkbox">
+                    <input id="input-checkbox-texto-superior" class="input-check" type="checkbox" >
                     <label for="input-checkbox-texto-superior" class="texto-check">Sin texto superior</label>
                 </div>
             </div>
@@ -219,7 +219,7 @@
             <div>
                 <div class="titulo2-margen">
                     <label class="titulo2-aside">INFERIOR</label>
-                    <input id="input-texto-inferior" class="input-estilo-general input-hover" type="text" value="BOTTOM TEXT">
+                    <input id="input-texto-inferior" class="input-estilo-general input-hover" type="text" value="BOTTOM TEXT" aria-label="Ingrese un texto inferior">
                 </div>
                 <div>
                     <input id="input-checkbox-texto-inferior" class="input-check" type="checkbox">
@@ -232,7 +232,7 @@
 
             <div class="titulo2-margen">
                 <label class="titulo2-aside">FUENTE</label>
-                <select id="seleccionar-fuente" class="input-estilo-general input-hover" aria-label="Tipo de fuente">
+                <select id="seleccionar-fuente" class="input-estilo-general input-hover" aria-expanded="true" aria-label="Tipo de fuente">
                     <option value="Arial">Arial</option>
                     <option value="Arial Black">Arial Black</option>
                     <option value="American Typewriter">American Typewriter</option>
@@ -252,14 +252,14 @@
 
                     <!-- *************** Alineación *************** -->
 
-                <button id="alinear-izquierda" class="input-estilo-general alineacion-fuente input-hover">
-                    <i class="fa-solid fa-align-left"></i>
+                <button id="alinear-izquierda" class="input-estilo-general alineacion-fuente input-hover" aria-label="Alinear texto a la izquierda">
+                    <i class="fa-solid fa-align-left" aria-hidden="true"></i>
                 </button>
-                <button id="alinear-centro" class="input-estilo-general alineacion-fuente input-hover">
-                    <i class="fa-solid fa-align-justify"></i>
+                <button id="alinear-centro" class="input-estilo-general alineacion-fuente input-hover" aria-label="Alinear texto al centro">
+                    <i class="fa-solid fa-align-justify" aria-hidden="true"></i>
                 </button>                
-                <button id="alinear-derecha" class="input-estilo-general alineacion-fuente input-hover">
-                    <i class="fa-solid fa-align-right"></i>
+                <button id="alinear-derecha" class="input-estilo-general alineacion-fuente input-hover" aria-label="Alinear texto a la derecha">
+                    <i class="fa-solid fa-align-right" aria-hidden="true"></i>
                 </button>
             </div>
 
@@ -274,7 +274,7 @@
                     <div class="titulo2-margen contenedor-color">
                         <label class="titulo2-aside">COLOR</label>
                         <div class="input-estilo-general contenedor-input-color input-hover">
-                            <input id="input-color-texto" class="input-color" type="color" value="#000000">
+                            <input id="input-color-texto" class="input-color" type="color" value="#000000" aria-label="Seleccionar color de texto">
                             <span id="span-color-texto">#000000</span>
                         </div>
                     </div>
@@ -285,13 +285,13 @@
                     <div class="titulo2-margen contenedor-fondo">
                         <label class="titulo2-aside">FONDO</label>
                         <div class="input-estilo-general contenedor-input-color input-hover">
-                            <input id="input-color-fondo" class="input-color" type="color" value="#FFFFFF">
+                            <input id="input-color-fondo" class="input-color" type="color" value="#FFFFFF" aria-label="seleccionar color de fondo">
                             <span id="span-fondo-texto">#FFFFFF</span>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <input id="input-fondo-transparente" class="input-check" type="checkbox">
+                    <input id="input-fondo-transparente" class="input-check" type="checkbox" aria-checked="true">
                     <label for="input-fondo-transparente" class="texto-check">Fondo transparente</label>
                 </div>
             </div>
@@ -302,9 +302,9 @@
             <div class="titulo2-margen">
                 <label class="titulo2-aside">CONTORNO</label>
                 <div>
-                    <input id="contorno-ninguno" class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno">
-                    <input id="contorno-claro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro">
-                    <input id="contorno-oscuro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro">
+                    <input id="contorno-ninguno" class="input-estilo-general input-contorno-ninguno input-hover" placeholder="Ninguno" aria-label="Sin contorno">
+                    <input id="contorno-claro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Claro" aria-label="Contorno claro">
+                    <input id="contorno-oscuro" class="input-estilo-general input-contorno-claro-oscuro input-hover" placeholder="Oscuro" aria-label="Contorno oscuro">
                 </div>
             </div>
 
@@ -313,7 +313,7 @@
 
             <div class="titulo2-margen">
                 <label class="titulo2-aside">ESPACIADO</label>
-                <input id="espaciado" class="input-estilo-general input-hover" type="number" min="10" max="50" value="35">
+                <input id="espaciado" class="input-estilo-general input-hover" type="number" min="10" max="50" value="35" aria-label="espaciado">
             </div>
 
 
@@ -321,7 +321,7 @@
 
             <div class="titulo2-margen">
                 <label class="titulo2-aside">INTERLINEADO</label>
-                <select id="seleccionar-interlineado" class="input-estilo-general input-hover">
+                <select id="seleccionar-interlineado" class="input-estilo-general input-hover" aria-expanded="true" aria-label="Interlineado">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
                     <option value="1.2" selected>1.2</option>
