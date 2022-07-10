@@ -72,6 +72,24 @@ btnSwitch.addEventListener('click',() => {
 });
 
 
+
+                                    /* *************** Ocultar panel *************** */
+
+const btnCerrarPanelImagen = document.getElementById('btn-cerrar-panel-imagen');
+btnCerrarPanelImagen.addEventListener('click', () => {   
+    asideImagen.style.display = 'none';
+})
+
+
+const btnCerrarPanelTexto = document.getElementById('btn-cerrar-panel-texto');
+btnCerrarPanelTexto.addEventListener('click', () => {
+    asideTexto.style.display = 'none';
+})
+
+
+
+
+
 /* /////////////////////////////////////////////////////////////// */
 /* MAIN
 /* /////////////////////////////////////////////////////////////// */

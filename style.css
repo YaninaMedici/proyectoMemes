@@ -144,15 +144,15 @@ header{
 }
 
 .meme{
-    width: 35%;
     background-color: black;
-    margin: 2%;
-    height: 500px;
+    width: 35%;
+    height: 450px;
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 1%;
 }
 
 .meme-texto-superior, .meme-texto-inferior{
@@ -193,7 +193,6 @@ header{
     font-size: 0.7em;
     width: 9%;
     height: 35px;
-    margin-top: 1%;
 }
 
 .btn-main:hover{
@@ -225,7 +224,7 @@ header{
 .titulo1-aside{
     font-size: 0.9em;
     text-align: center;
-    margin-bottom: 6%;
+    margin-bottom: 4%;
 }
 
 .titulo2-margen{
@@ -241,12 +240,14 @@ header{
 .input-estilo-general{
     width: 100%;
     background-color: rgb(210, 194, 211);
+    color: rgb(78, 77, 77);
     height: 25px;
     border: none;
     border-radius: 3px;
     margin-top: 1%;
     margin-bottom: 1%;
-    font-size: 0.65em;
+    font-size: 0.7em;
+    padding-left: 3%;
 }
 
 .input-hover:hover{
@@ -274,6 +275,7 @@ header{
 
 .input-imagen-select{
     margin-left: 5%;
+    
 }
 
 .titulo3-aside{
@@ -293,13 +295,14 @@ header{
 }
 
 .btn-filtros{
-    width: 55%;
+    width: 60%;
     height: 25px;
     font-size: 0.71em;
     background-color: rgb(210, 194, 211);
+    color: rgb(78, 77, 77);
     border: none;
     border-radius: 3px;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 .btn-filtros:hover{
@@ -388,25 +391,25 @@ header{
 
 @media screen and (max-width: 480px){
     
+    .oculto{
+        display: none;
+    }
+
     .btn-cerrar-panel{
-        width: 15%;
-        height: 12px;
+        width: 5%;
+        height: 20px;
         display: block;
         background-color: transparent;
         color: rgb(78, 77, 77);
         border: transparent;
         border-radius: 2px;
-        font-size: 0.45em;
+        font-size: 0.65em;
         font-weight: 900;
-        margin-left: 70%;
+        margin-left: 95%;
     }
     
     .btn-cerrar-panel:hover{
         background-color: rgb(185, 158, 187);
-    }
-
-    .aside-imagen-texto{
-        display: none;
     }
     
     .titulo{
@@ -430,52 +433,82 @@ header{
     }
     
     .btn-main{
-        /* background-color: green; */
-        /* border: none; */
-        /* color: white; */
-        /* font-size: 0.7em; */
         width: 35%;
-        /* height: 35px; */
         margin-top: 8%;
     }
-    
-    .btn-main:hover{
-        /* background-color: rgb(31, 97, 31); */
-    }
-    
-    .main-icono{
-        /* color: white; */
-        /* font-size: 1em; */
+
+    .aside-imagen-texto{
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
+    .contenedor-input-color{
+        justify-content: left;
+        padding-left: 4%;
+    }
 
+    .input-color{
+        width: 10%;
+        height: 20px;
+        margin-right: 4%;
+    }
 
-
-
-
-
-
-
-
+    .btn-filtros{
+        width: 40%;
+        margin-top: 3%;
+    }
 }
 
-/* @media screen and (min-width:481px) and (max-width: 819px){
+@media screen and (min-width:481px) and (max-width: 819px){
     
+    .oculto{
+        display: none;
+    }
+
     .btn-cerrar-panel{
-        width: 15%;
-        height: 12px;
+        width: 10%;
+        height: 17px;
         display: block;
         background-color: transparent;
         color: rgb(78, 77, 77);
         border: transparent;
         border-radius: 2px;
-        font-size: 0.45em;
+        font-size: 0.55em;
         font-weight: 900;
-        margin-left: 70%;
+        margin-left: 90%;
     }
 
     .btn-cerrar-panel:hover{
         background-color: rgb(185, 158, 187);
     }
 
-} */
+    .titulo{
+        margin-top: 1.5%;
+    }
+
+    .navegacion-menu{
+        width: 30%;
+    }
+
+    .meme{
+        width: 75%;
+    }
+    
+    .meme-texto-superior, .meme-texto-inferior{
+        height: 15%;
+        font-size: 1.6em;
+    }
+    
+    .btn-main{
+        width: 20%;
+        margin-top: 2%;
+    }
+
+    .aside-imagen-texto{
+        width: 31%;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+    }
+
+}
