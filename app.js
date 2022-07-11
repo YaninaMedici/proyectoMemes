@@ -21,20 +21,34 @@ const contornoNinguno = document.getElementById('contorno-ninguno');
 const contornoClaro = document.getElementById('contorno-claro');
 const contornoOscuro = document.getElementById('contorno-oscuro');
 const seleccionarInterlineado = document.getElementById('seleccionar-interlineado');
-
+const btnDescarga = document.getElementById('btn-descarga');
+const fondoColorImagen = document.getElementById('fondo-color-imagen');                        
+const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
+const spanColorImagen = document.getElementById('span-color-imagen');
+const dirImagen = document.getElementById('url');
+const brightness = document.getElementById('brillito');
+const opacity = document.getElementById('opaco');
+const contrast = document.getElementById('contrasteu');
+const blure = document.getElementById('desenfocado');
+const gray = document.getElementById('grises');
+const sepias = document.getElementById('sepia');
+const huec = document.getElementById('hue');
+const saturados = document.getElementById('saturado');
+const negro = document.getElementById('negativo');
+const btnRest = document.getElementById('btnRest');
 
 
 
 
 /* /////////////////////////////////////////////////////////////// */
-/* HEADER */
+/* HEADER
 /* /////////////////////////////////////////////////////////////// */
 
 
 
                                     /* *************** Alternar paneles - Texto / Imagen *************** */
 
-                                    
+
 btnImagen.addEventListener('click', () => {
     asideImagen.classList.remove('oculto');
     asideImagen.style.display = 'block';
@@ -47,7 +61,51 @@ btnTexto.addEventListener('click', () => {
     asideTexto.style.display = 'block';
     asideImagen.classList.add('oculto');
     asideImagen.style.display = 'none';
-  });
+});
+
+
+
+                                    /* *************** Modo oscuro *************** */
+
+const btnSwitch = document.querySelector('#switch');
+btnSwitch.addEventListener('click', () => {
+    document.getElementById('darki').classList.toggle('dark');
+    document.getElementById('nav').classList.toggle('dark');  
+    document.getElementById('section').classList.toggle('dark');     
+    document.getElementById('aside-imagen').classList.toggle('dark');
+    document.getElementById('aside-texto').classList.toggle('dark');
+    document.getElementById('btn-texto').classList.toggle('dark');
+    document.getElementById('btn-imagen').classList.toggle('dark'); 
+    btnSwitch.classList.toggle('active');  
+});
+
+
+
+                                    /* *************** Ocultar panel *************** */
+
+const btnCerrarPanelImagen = document.getElementById('btn-cerrar-panel-imagen');
+btnCerrarPanelImagen.addEventListener('click', () => {   
+    asideImagen.style.display = 'none';
+})
+
+const btnCerrarPanelTexto = document.getElementById('btn-cerrar-panel-texto');
+btnCerrarPanelTexto.addEventListener('click', () => {
+    asideTexto.style.display = 'none';
+})
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* MAIN
+/* /////////////////////////////////////////////////////////////// */
+
+
+
+                                    /* *************** Botón de descarga *************** */
+
+btnDescarga.addEventListener('click', () =>
+    domtoimage.toBlob(document.getElementById('section-pp')).then(blob => 
+        saveAs(blob, 'mi-meme.png')))
 
 
 /* /////////////////////////////////////////////////////////////// */
@@ -57,7 +115,7 @@ btnTexto.addEventListener('click', () => {
 
 
                                     /* *************** Texto superior *************** */
-
+                                    
 inputTextoSuperior.addEventListener('input', (event) => {
     const textoIngresado = event.target.value;
     memeTextoSuperior.innerHTML = textoIngresado;
@@ -123,27 +181,36 @@ alinearDerecha.addEventListener('click', () => {
 
                                     /* *************** Color *************** */
 
+const spanColorTexto = document.getElementById('span-color-texto');
 inputColorTexto.addEventListener('input', () => {
     memeTextoSuperior.style.color = inputColorTexto.value;
     memeTextoInferior.style.color = inputColorTexto.value;
+    spanColorTexto.innerHTML = `${inputColorTexto.value}`;
 });
 
 
 
                                     /* *************** Fondo *************** */
 
+const spanFondoTexto = document.getElementById('span-fondo-texto');
 inputColorFondo.addEventListener('input', () => {
     memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
     memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+    spanFondoTexto.innerHTML = `${inputColorFondo.value}`; 
 });
 
 inputFondoTransparente.addEventListener('input', () => {
     if (inputFondoTransparente.checked){
         memeTextoSuperior.style.backgroundColor = 'transparent';
         memeTextoInferior.style.backgroundColor = 'transparent';
+        memeTextoSuperior.style.position = 'absolute';
+        memeTextoInferior.style.position = 'absolute';
+        memeTextoInferior.style.top = '83%';
     }else{
         memeTextoSuperior.style.backgroundColor = inputColorFondo.value;
         memeTextoInferior.style.backgroundColor = inputColorFondo.value;
+        memeTextoSuperior.style.position = 'static';
+        memeTextoInferior.style.position = 'static';
     }
 });
 
@@ -171,7 +238,7 @@ contornoOscuro.addEventListener('click', () => {
                                     /* *************** Espaciado *************** */
 
 const espaciado = document.getElementById('espaciado');
-memeTextoSuperior.addEventListener('input', () => {
+espaciado.addEventListener('input', () => {
     memeTextoSuperior.style.padding = `${espaciado.value}px`;
     memeTextoInferior.style.padding = `${espaciado.value}px`;
 })
@@ -186,67 +253,83 @@ seleccionarInterlineado.addEventListener('input', () => {
 })
 
 
-/* ***************
-// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
-// *************** */
+
+/* /////////////////////////////////////////////////////////////// */
+/*  ASIDE - IMAGEN
+/* /////////////////////////////////////////////////////////////// */
 
 
-const btnSwitch = document.querySelector(`#switch`);
-btnSwitch.addEventListener('click',() => {
-    document.getElementById(`darki`).classList.toggle(`dark`);
-    document.getElementById(`nav`).classList.toggle(`dark`);  
-    document.getElementById(`section`).classList.toggle(`dark`);     
-    document.getElementById(`imagen-aside`).classList.toggle(`dark`); 
-    document.getElementById(`texto-aside`).classList.toggle(`dark`); 
-    btnSwitch.classList.toggle(`active`);  
+                                    /* *************** URL *************** */
+
+dirImagen.oninput = function() {
+    memeImagen.style.backgroundImage = `url(${dirImagen.value})`;
+};
+
+
+
+                                    /* *************** Fondo *************** */
+                                    
+fondoColorImagen.addEventListener('input', () => {
+    memeImagen.style.backgroundColor = fondoColorImagen.value;
+    spanColorImagen.innerHTML = `${fondoColorImagen.value}`;
 });
 
-/* *** FILTROS >> ** */ 
+selectorFondoImagen.addEventListener('change', () => {
+ memeImagen.style.backgroundBlendMode = selectorFondoImagen.value;
+});
 
-    rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
-    // probando console.log(rangeInput)
-    meme = document.getElementById(`imagen-aqui`);       
 
-         Array.from(rangeInput).forEach(function(element) {
-            element.addEventListener('change',function(){ 
-                //Probando que funcione console.log("algo",element.name) 
-                meme.style.filter = element.name+"(" + element.value + element.title +")" 
-            })          
-          });
 
-        /* *** Empece hacer esta funcion pero la reescribi para no tener que repetir varias veces 2deJulio FE
-           
-
-     meme.style.filter = "brightness(" + rangeInput.value + "%)"            
-
-         });
-
-            rangeIv tg bvn.,jt095 yn0dxf p 7lnputOp = document.getElementById(`opaco`);  
-
-             rangeInputOp.addEventListener("change",function(){
-           
-                  meme.style.filter = "opacity(" + rangeInputOp.value + "%)"            
+                                    /* *************** Filtros *************** */
      
-              });
 
-              rangeInputCo = document.getElementById(`contrasteu`);   
-           
-                   rangeInputCo.addEventListener("change",function(){
-                 
-                        meme.style.filter = "contrast(" + rangeInputCo.value + "%)"            
-           
-                    }); **/      
+const filtros = () => {
+    memeImagen.style.filter = `brightness(${brightness.value}) 
+    opacity(${opacity.value}) 
+    contrast(${contrast.value}%) 
+    blur(${blure.value}px)
+    grayscale(${gray.value}%) 
+    sepia(${sepias.value}%) 
+    hue-rotate(${huec.value}deg) 
+    saturate(${saturados.value}%) 
+    invert(${negro.value})`;
+    console.log('filtros');
+}
 
-/* ***************
-URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
-*************** */
+brightness.addEventListener(`change`, filtros)
+opacity.addEventListener(`change`, filtros)
+contrast.addEventListener(`change`, filtros)
+blure.addEventListener(`change`, filtros)
+gray.addEventListener(`change`, filtros)
+sepias.addEventListener(`change`, filtros)
+huec.addEventListener(`change`, filtros)
+saturados.addEventListener(`change`, filtros)
+negro.addEventListener(`change`, filtros)
 
-const urlImagen = document.getElementById("url");
 
-    urlImagen.oninput = function() {
-    
-      // Probando que funcione con  console.log(urlImagen.value)
 
-    meme.src = urlImagen.value
-};
+                                    /* *************** BTN Restablecer filtros *************** */
+              
+
+btnRest.addEventListener('click', () => { 
+    memeImagen.style.filter = `brightness(1)`;
+    memeImagen.style.filter = `opacity(1)`;
+    memeImagen.style.filter = `contrast(100)`;
+    memeImagen.style.filter = `blur(0)`;
+    memeImagen.style.filter = `grayscale(0)`;
+    memeImagen.style.filter = `sepia(0)`;
+    memeImagen.style.filter = `hue-rotate(0)`;
+    memeImagen.style.filter = `saturate(100)`;
+    memeImagen.style.filter = `invert(0)`;
+
+    brightness.value = 1;
+    opacity.value = 1;
+    contrast.value = 100;
+    blure.value = 0;
+    gray.value = 0;
+    sepias.value = 0;
+    huec.value = 0;
+    saturados.value = 100;
+    negro.value = 0;
+});
 
