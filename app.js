@@ -70,12 +70,48 @@ btnTexto.addEventListener('click', () => {
 const btnSwitch = document.querySelector('#switch');
 btnSwitch.addEventListener('click', () => {
     document.getElementById('darki').classList.toggle('dark');
+    document.getElementById('header').classList.toggle('dark');
     document.getElementById('nav').classList.toggle('dark');  
-    document.getElementById('section').classList.toggle('dark');     
-    document.getElementById('aside-imagen').classList.toggle('dark');
-    document.getElementById('aside-texto').classList.toggle('dark');
+    document.getElementById('section').classList.toggle('dark-ligth');     
+    document.getElementById('aside-imagen').classList.toggle('dark-medium');
+    document.getElementById('aside-texto').classList.toggle('dark-medium');
     document.getElementById('btn-texto').classList.toggle('dark');
     document.getElementById('btn-imagen').classList.toggle('dark'); 
+    document.getElementById('input-texto-superior').classList.toggle('dark-input');
+    document.getElementById('input-texto-inferior').classList.toggle('dark-input');
+    document.getElementById('seleccionar-fuente').classList.toggle('dark-input');
+    document.getElementById('tamano-de-fuente').classList.toggle('dark-input');
+    document.getElementById('alinear-izquierda').classList.toggle('dark-input');
+    document.getElementById('alinear-centro').classList.toggle('dark-input');
+    document.getElementById('alinear-derecha').classList.toggle('dark-input');
+    document.getElementById('contenedor-input-texto-color').classList.toggle('dark-input');
+    document.getElementById('contenedor-input-texto-fondo').classList.toggle('dark-input');
+    document.getElementById('contorno-ninguno').classList.toggle('dark-input');
+    document.getElementById('contorno-claro').classList.toggle('dark-input');
+    document.getElementById('contorno-oscuro').classList.toggle('dark-input');
+    document.getElementById('espaciado').classList.toggle('dark-input');
+    document.getElementById('seleccionar-interlineado').classList.toggle('dark-input');
+    document.getElementById('url').classList.toggle('dark-input');
+    document.getElementById('contenedor-input-imagen-fondo').classList.toggle('dark-input');
+    document.getElementById('selector-fondo-imagen').classList.toggle('dark-input');
+    document.getElementById('btnRest').classList.toggle('dark-input');
+    document.getElementById('btn-imagen').classList.toggle('dark-hover');
+    document.getElementById('btn-texto').classList.toggle('dark-hover');
+    document.getElementById('input-texto-superior').classList.toggle('dark-hover');
+    document.getElementById('input-texto-inferior').classList.toggle('dark-hover');
+    document.getElementById('seleccionar-fuente').classList.toggle('dark-hover');
+    document.getElementById('tamano-de-fuente').classList.toggle('dark-hover');
+    document.getElementById('alinear-izquierda').classList.toggle('dark-hover');
+    document.getElementById('alinear-centro').classList.toggle('dark-hover');
+    document.getElementById('alinear-derecha').classList.toggle('dark-hover');
+    document.getElementById('contorno-ninguno').classList.toggle('dark-hover');
+    document.getElementById('contorno-claro').classList.toggle('dark-hover');
+    document.getElementById('contorno-oscuro').classList.toggle('dark-hover');
+    document.getElementById('espaciado').classList.toggle('dark-hover');
+    document.getElementById('seleccionar-interlineado').classList.toggle('dark-hover');
+    document.getElementById('url').classList.toggle('dark-hover');
+    document.getElementById('selector-fondo-imagen').classList.toggle('dark-hover');
+    document.getElementById('btnRest').classList.toggle('dark-hover');
     btnSwitch.classList.toggle('active');  
 });
 
@@ -107,6 +143,7 @@ btnDescarga.addEventListener('click', () =>
     domtoimage.toBlob(document.getElementById('section-pp')).then(blob => 
         saveAs(blob, 'mi-meme.png')))
 
+        
 
 /* /////////////////////////////////////////////////////////////// */
 /*  ASIDE - TEXTO

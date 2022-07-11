@@ -19,8 +19,27 @@ body{
 /* /////////////////////////////////////////////////////////////// */
 
 .dark{
-    background-color: rgb(41, 40, 40) !important;  
+    background-color: rgb(54, 54, 54) !important;  
     color: white !important;
+}
+
+.dark-medium{
+    background-color: rgb(61, 61, 61) !important;
+    color: white;
+}
+
+.dark-ligth{
+    background-color: rgb(73, 73, 73) !important;
+    color: white;
+}
+
+.dark-input{
+    background-color: rgb(92, 92, 92) !important;
+    color: white !important;
+}
+
+.dark-hover:hover{
+    background-color: rgb(116, 116, 116) !important;
 }
 
 .oculto{
@@ -38,14 +57,13 @@ header{
     background-color: rgb(210, 194, 211);
     position: absolute;
     width: 100%;
-    /* height: 90px; lo saque para que el modo oscuro quede lindo*/
 }
 
 .titulo{
     font-size: 1.7em;
     text-align: center;
-    /* margin-top: 0.5%; lo saque para que el modo oscuro quede lindo*/
-    margin-bottom: 0.5%; 
+    padding-bottom: 0.5%; 
+    padding-top: 0.5%;
 }
 
 
