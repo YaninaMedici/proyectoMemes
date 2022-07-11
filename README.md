@@ -33,7 +33,5 @@ Utilizamos GitHub colaborativo!
 ==🌱 Gracias
 
 
-## DIAGRAMA DE FLUJO
 
-![Esta es una imagen](https://github.com/YaninaMedici/proyectoMemes/blob/main/diagramaGeneradorDeMemes.jpg)
 
