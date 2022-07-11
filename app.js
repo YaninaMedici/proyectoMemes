@@ -25,9 +25,17 @@ const btnDescarga = document.getElementById('btn-descarga');
 const fondoColorImagen = document.getElementById('fondo-color-imagen');                        
 const selectorFondoImagen = document.getElementById('selector-fondo-imagen');
 const spanColorImagen = document.getElementById('span-color-imagen');
-
-
-
+const dirImagen = document.getElementById('url');
+const brightness = document.getElementById('brillito');
+const opacity = document.getElementById('opaco');
+const contrast = document.getElementById('contrasteu');
+const blure = document.getElementById('desenfocado');
+const gray = document.getElementById('grises');
+const sepias = document.getElementById('sepia');
+const huec = document.getElementById('hue');
+const saturados = document.getElementById('saturado');
+const negro = document.getElementById('negativo');
+const btnRest = document.getElementById('btnRest');
 
 
 
@@ -56,25 +64,19 @@ btnTexto.addEventListener('click', () => {
 });
 
 
-/* ***************
-// Modo oscuro agregue este comentario nada mas-DATE 1 de julio
-// *************** */
 
+                                    /* *************** Modo oscuro *************** */
 
-const btnSwitch = document.querySelector(`#switch`);
-btnSwitch.addEventListener('click',() => {
-    
-    document.getElementById(`darki`).classList.toggle(`dark`);
-    document.getElementById(`nav`).classList.toggle(`dark`);  
-    document.getElementById(`section`).classList.toggle(`dark`);     
-    document.getElementById(`aside-imagen`).classList.toggle(`dark`);
-    document.getElementById(`aside-texto`).classList.toggle(`dark`);
-    document.getElementById(`titulo`).classList.toggle(`dark`);
-    document.getElementById(`blanco-texto`).classList.toggle(`dark`); 
-    document.getElementById(`blanco-imagen`).classList.toggle(`dark`);  
-     document.getElementById(`headeri`).classList.toggle(`dark`);
-    
-    btnSwitch.classList.toggle(`active`);  
+const btnSwitch = document.querySelector('#switch');
+btnSwitch.addEventListener('click', () => {
+    document.getElementById('darki').classList.toggle('dark');
+    document.getElementById('nav').classList.toggle('dark');  
+    document.getElementById('section').classList.toggle('dark');     
+    document.getElementById('aside-imagen').classList.toggle('dark');
+    document.getElementById('aside-texto').classList.toggle('dark');
+    document.getElementById('btn-texto').classList.toggle('dark');
+    document.getElementById('btn-imagen').classList.toggle('dark'); 
+    btnSwitch.classList.toggle('active');  
 });
 
 
@@ -86,13 +88,10 @@ btnCerrarPanelImagen.addEventListener('click', () => {
     asideImagen.style.display = 'none';
 })
 
-
 const btnCerrarPanelTexto = document.getElementById('btn-cerrar-panel-texto');
 btnCerrarPanelTexto.addEventListener('click', () => {
     asideTexto.style.display = 'none';
 })
-
-
 
 
 
@@ -248,7 +247,7 @@ espaciado.addEventListener('input', () => {
 
                                     /* *************** Interlineado *************** */
 
-                                    seleccionarInterlineado.addEventListener('input', () => {
+seleccionarInterlineado.addEventListener('input', () => {
     memeTextoSuperior.style.lineHeight = seleccionarInterlineado.value;
     memeTextoInferior.style.lineHeight = seleccionarInterlineado.value;
 })
@@ -262,19 +261,10 @@ espaciado.addEventListener('input', () => {
 
                                     /* *************** URL *************** */
 
-/* ***************
-URL  Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
-*************** */
-
-const dirImagen = document.getElementById("url");
-const meme = document.getElementById('imagen-aqui');
-
-    dirImagen.oninput = function() {
-    
-      // Probando que funcione con  console.log(urlImagen.value)
-
+dirImagen.oninput = function() {
     memeImagen.style.backgroundImage = `url(${dirImagen.value})`;
 };
+
 
 
                                     /* *************** Fondo *************** */
@@ -290,118 +280,47 @@ selectorFondoImagen.addEventListener('change', () => {
 
 
 
-/* *** FILTROS >> ** */ 
-
-    const rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);    
-    // probando console.log(rangeInput)
-    const brightness = document.getElementById(`brillito`)
-    const opacity = document.getElementById(`opaco`)
-    const contrast = document.getElementById(`contrasteu`)
-    const blure = document.getElementById(`desenfocado`)
-    const gray = document.getElementById(`grises`)
-    const sepias = document.getElementById(`sepia`)
-    const huec = document.getElementById(`hue`)
-    const saturados = document.getElementById(`saturado`)
-    const negro = document.getElementById(`negativo`)
-    
-   
-    
-    
-    
-    const filtros = () => {
-
-        meme.style.filter = `brightness(${brightness.value}) 
-        opacity(${opacity.value}) 
-        contrast(${contrast.value}%) 
-        blur(${blure.value}px)
-        grayscale(${gray.value}%) 
-        sepia(${sepias.value}%) 
-        hue-rotate(${huec.value}deg) 
-        saturate(${saturados.value}%) 
-        invert(${negro.value})`;
-    }
-
-    brightness.addEventListener(`change`, filtros)
-    opacity.addEventListener(`change`, filtros)
-    contrast.addEventListener(`change`, filtros)
-    blure.addEventListener(`change`, filtros)
-    gray.addEventListener(`change`, filtros)
-    sepias.addEventListener(`change`, filtros)
-    huec.addEventListener(`change`, filtros)
-    saturados.addEventListener(`change`, filtros)
-    negro.addEventListener(`change`, filtros)
-
-
-
-
-        //  Array.from(rangeInput).forEach(function(element) {
-        //     element.addEventListener('change',function(){ 
-        //         //Probando que funcione console.log("algo",element.name) 
-        //         meme.style.filter = element.name+"(" + element.value + element.title +")" 
-        //     })          
-        //   });
-
-
-
-        /* *** Empece hacer esta funcion pero la reescribi para no tener que repetir varias veces 2deJulio FE
-           
-
-                meme.style.filter = "brightness(" + rangeInput.value + "%)"    
-                 rangeInputOp.addEventListener("change",function(){
-           
-                  meme.style.filter = "opacity(" + rangeInputOp.value + "%)"            
+                                    /* *************** Filtros *************** */
      
-              });
 
-              rangeInputCo = document.getElementById(`contrasteu`);   
-           
-                   rangeInputCo.addEventListener("change",function(){
-                 
-                    meme.style.filter = "contrast(" + rangeInputCo.value + "%)"            
-           
-                    }); **/      
-
-
-/* ***************
-BOTON REESTABLECER Hoy hice esta funcion para agregar la imagen al generador  2 de julio - FE
-*************** */
-
- /* **const botonRes = document.getElementById("btnRest");
- rangeInput = document.getElementsByClassName(`input-estilo-deslizante`);
-
-botonRes.addEventListener("click", function(event){
-  
-  botonRes.click = clear;
-
-  
-    
-});** */
-/* **const restablecer = (e) => {
-    e.preventDefault()
-    meme.style.filter = ` `;
+const filtros = () => {
+    memeImagen.style.filter = `brightness(${brightness.value}) 
+    opacity(${opacity.value}) 
+    contrast(${contrast.value}%) 
+    blur(${blure.value}px)
+    grayscale(${gray.value}%) 
+    sepia(${sepias.value}%) 
+    hue-rotate(${huec.value}deg) 
+    saturate(${saturados.value}%) 
+    invert(${negro.value})`;
+    console.log('filtros');
 }
 
+brightness.addEventListener(`change`, filtros)
+opacity.addEventListener(`change`, filtros)
+contrast.addEventListener(`change`, filtros)
+blure.addEventListener(`change`, filtros)
+gray.addEventListener(`change`, filtros)
+sepias.addEventListener(`change`, filtros)
+huec.addEventListener(`change`, filtros)
+saturados.addEventListener(`change`, filtros)
+negro.addEventListener(`change`, filtros)
 
-                
-            btnRest.addEventListener(`click`,(e) => {restablecer});
-     //   change();
-   // }* */
 
-   const btnRest = document.getElementById("btnRest");
 
-   const restablecer = (e) => {
+                                    /* *************** BTN Restablecer filtros *************** */
+              
 
-    e.preventDefault()
-    meme.style.filter = `brightness(1)`;
-    meme.style.filter = `opacity(1)`;
-    meme.style.filter = `contrast(100)`;
-    meme.style.filter = `blur(0)`;
-    meme.style.filter = `grayscale(0)`;
-    meme.style.filter = `sepia(0)`;
-    meme.style.filter = `hue-rotate(0)`;
-    meme.style.filter = `saturate(100)`;
-    meme.style.filter = `invert(0)`;
-   
+btnRest.addEventListener('click', () => { 
+    memeImagen.style.filter = `brightness(1)`;
+    memeImagen.style.filter = `opacity(1)`;
+    memeImagen.style.filter = `contrast(100)`;
+    memeImagen.style.filter = `blur(0)`;
+    memeImagen.style.filter = `grayscale(0)`;
+    memeImagen.style.filter = `sepia(0)`;
+    memeImagen.style.filter = `hue-rotate(0)`;
+    memeImagen.style.filter = `saturate(100)`;
+    memeImagen.style.filter = `invert(0)`;
 
     brightness.value = 1;
     opacity.value = 1;
@@ -412,18 +331,5 @@ botonRes.addEventListener("click", function(event){
     huec.value = 0;
     saturados.value = 100;
     negro.value = 0;
-       
-   }
-   btnRest.addEventListener(`click`,restablecer)
-   //  const btnResta = document.getElementById("btnRest");
-   // btnResta.addEventListener('click', (element) => {
-  //  document.getElementById("rangeInput").reset(); 
+});
 
-
-//rangeInput.display.value = `clear` ;
- //});
-
-//FUNCION RESTABLER PERO NO FUNCIONA
-   // document.getElementById('reset').onclick = function(){
-   // document.getElementById('rangeInput').value = 0;
-//}

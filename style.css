@@ -13,6 +13,7 @@ body{
     background-color: rgb(210, 194, 211)
     
 }
+
 /* /////////////////////////////////////////////////////////////// */
 /* Modo oscuro */
 /* /////////////////////////////////////////////////////////////// */
@@ -21,8 +22,6 @@ body{
     background-color: rgb(41, 40, 40) !important;  
     color: white !important;
 }
-
-
 
 .oculto{
     display: none;
@@ -122,11 +121,11 @@ header{
 .navegacion-btn-switch.active{
     background-color: orange;
     color: black;
-    }
+}
 
-    .navegacion-btn-switch.active::after{
+.navegacion-btn-switch.active::after{
     left: unset;
-    right:0 ;
+    right: 0;
 }
 
 /* /////////////////////////////////////////////////////////////// */
@@ -331,7 +330,6 @@ header{
     right: 0;
     display: flex;
     justify-content: center;
-    /* display: none; */
 }
 
 .input-check{
@@ -365,18 +363,27 @@ header{
 }
 
 .contenedor-input-color{
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.input-color{
-    width: 20%;
-    height: 20px;
-    border: none;
-    border-color: transparent;
-    margin-right: 8%;
+input[type='color'],
+input[type='color']::-webkit-color-swatch-wrapper,
+input[type='color']::-webkit-color-swatch {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+}
+
+.span-input-color{
+    margin: auto;
 }
 
 .input-contorno-ninguno{
